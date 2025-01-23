@@ -7,4 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }/assets/images/logo.png`;
   link.type = "image/x-icon";
   document.head.appendChild(link);
+
+  // Animate on scroll
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (elementTop < windowHeight - 130) {
+        element.classList.add("animated");
+      } else if (elementTop > windowHeight + 50) {
+        element.classList.remove("animated");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", animateOnScroll);
+  animateOnScroll(); // Initial check on page load
 });
