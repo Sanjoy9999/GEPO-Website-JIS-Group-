@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEPO - Global Partnerships</title>
+    <link rel="stylesheet" href="../css_files/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="/" class="active"
+            ><img src="../assets/images/logo.png" alt="JIS Logo"
+          /></a>
+        </div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="./about.html" class="active">About Us</a></li>
+          <li><a href="#">Global Partnerships</a></li>
+          <li><a href="./programs.html">Programs & Initiatives</a></li>
+          <li><a href="./resources.html">Resources & Support</a></li>
+          <li><a href="./events.html">Events & News</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="../admin/admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Global Partnerships</h1>
+          <p>
+            Connecting institutions and fostering international collaboration
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Interactive Map of Global Partners</h2>
+          <div
+            id="partnerMap"
+            style="height: 400px"
+            class="animate-on-scroll"
+          ></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Success Stories</h2>
+          <div class="card-container">
+            <div class="card animate-on-scroll">
+              <h3>Groundbreaking Research Collaboration</h3>
+              <p>
+                Our partnership with University XYZ led to a breakthrough in
+                renewable energy technology.
+              </p>
+              <a href="#" class="cta-button">Read More</a>
+            </div>
+            <div class="card animate-on-scroll">
+              <h3>Student Exchange Program Success</h3>
+              <p>
+                Over 100 students benefited from our exchange program with ABC
+                University last year.
+              </p>
+              <a href="#" class="cta-button">Read More</a>
+            </div>
+            <div class="card animate-on-scroll">
+              <h3>Joint Degree Program Launch</h3>
+              <p>
+                Our new joint MBA program with DEF Business School has attracted
+                global attention.
+              </p>
+              <a href="#" class="cta-button">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Partnership Inquiry Form</h2>
+          <form class="animate-on-scroll">
+            <div class="form-group">
+              <label for="institution">Institution Name</label>
+              <input type="text" id="institution" name="institution" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-name">Contact Person</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="contact-name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="partnership-type">Type of Partnership</label>
+              <select id="partnership-type" name="partnership-type" required>
+                <option value="">Select an option</option>
+                <option value="student-exchange">Student Exchange</option>
+                <option value="faculty-exchange">Faculty Exchange</option>
+                <option value="research-collaboration">
+                  Research Collaboration
+                </option>
+                <option value="joint-program">Joint Program</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="cta-button">Submit Inquiry</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">
+            Guidelines for Establishing New Partnerships
+          </h2>
+          <ol class="animate-on-scroll">
+            <li>
+              Identify potential partner institutions aligned with our strategic
+              goals
+            </li>
+            <li>
+              Conduct initial discussions to explore mutual interests and
+              benefits
+            </li>
+            <li>
+              Develop a detailed proposal outlining the scope of the partnership
+            </li>
+            <li>
+              Review and approval process by relevant committees and leadership
+            </li>
+            <li>Draft and sign a Memorandum of Understanding (MoU)</li>
+            <li>Implement the partnership activities and monitor progress</li>
+            <li>Regular evaluation and renewal of the partnership</li>
+          </ol>
+          <a href="#" class="cta-button">Download Detailed Guidelines (PDF)</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./programs.html">Study Abroad Programs</a></li>
+            <li><a href="./programs.html">International Admissions</a></li>
+            <li><a href="./programs.html">Faculty Exchange Programs</a></li>
+            <li><a href="#">Research Collaborations</a></li>
+            <li><a href="./events.html">Upcoming International Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Global Engagement & Partnerships Office</p>
+          <p>Email: gepo@jis.edu</p>
+          <p>Phone: +1 234 567 8900</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2023 Global Engagement & Partnerships Office. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js_files/script.js"></script>
+    <script src="../js_files/partnerships.js"></script>
+  </body>
+</html>
