@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GEPO - Global Partnerships</title>
     <link rel="stylesheet" href="../css_files/styles.css" />
+    <link rel="stylesheet" href="../css_files/partnerships.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <link
@@ -47,11 +48,11 @@
       <section class="section">
         <div class="container">
           <h2 class="section-title">Interactive Map of Global Partners</h2>
-          <div
+          <!-- <div
             id="partnerMap"
             style="height: 400px"
             class="animate-on-scroll"
-          ></div>
+          ></div> -->
         </div>
       </section>
 
@@ -87,51 +88,85 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="partnership-form">
         <div class="container">
           <h2 class="section-title">Partnership Inquiry Form</h2>
-          <form class="animate-on-scroll">
-            <div class="form-group">
-              <label for="institution">Institution Name</label>
-              <input type="text" id="institution" name="institution" required />
-            </div>
-            <div class="form-group">
-              <label for="contact-name">Contact Person</label>
-              <input
-                type="text"
-                id="contact-name"
-                name="contact-name"
-                required
+          <div class="formContainer animate-on-scroll">
+            <form>
+              <div class="form-field">
+                <label for="institution">Institution Name <span>*</span></label>
+                <input
+                  type="text"
+                  class="input-field"
+                  id="institution"
+                  name="institution"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="form-field">
+                <label for="contact-name">Contact Person <span>*</span></label>
+                <input
+                  type="text"
+                  class="input-field"
+                  id="contact-name"
+                  name="contact-name"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="form-field">
+                <label for="email">Email <span>*</span></label>
+                <input
+                  type="email"
+                  class="input-field"
+                  id="email"
+                  name="email"
+                  required
+                />
+                <span class="error-message"></span>
+              </div>
+              <div class="form-field">
+                <label for="partnership-type"
+                  >Type of Partnership <span>*</span></label
+                >
+                <select
+                  class="input-field"
+                  id="partnership-type"
+                  name="partnership-type"
+                  required
+                >
+                  <option value="" hidden>Select an option</option>
+                  <option value="student-exchange">Student Exchange</option>
+                  <option value="faculty-exchange">Faculty Exchange</option>
+                  <option value="research-collaboration">
+                    Research Collaboration
+                  </option>
+                  <option value="joint-program">Joint Program</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-message"></span>
+              </div>
+              <div class="form-field">
+                <label for="message">Message <span>*</span></label>
+                <textarea
+                  class="input-field"
+                  id="message"
+                  name="message"
+                  rows="4"
+                ></textarea>
+                <span class="error-message"></span>
+              </div>
+              <span class="error-message" id="form-error"></span>
+              <button type="submit">Submit Inquiry</button>
+            </form>
+            <div class="formImage">
+              <img
+                src="../assets/images/Enquiry_form_image.webp"
+                alt="Form Inquiry"
               />
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="partnership-type">Type of Partnership</label>
-              <select id="partnership-type" name="partnership-type" required>
-                <option value="">Select an option</option>
-                <option value="student-exchange">Student Exchange</option>
-                <option value="faculty-exchange">Faculty Exchange</option>
-                <option value="research-collaboration">
-                  Research Collaboration
-                </option>
-                <option value="joint-program">Joint Program</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="cta-button">Submit Inquiry</button>
-          </form>
+          </div>
         </div>
       </section>
 

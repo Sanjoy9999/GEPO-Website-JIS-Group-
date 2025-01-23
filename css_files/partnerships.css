@@ -1,0 +1,133 @@
+.container {
+  width: 85%;
+}
+
+#partnership-form {
+  background-color: rgb(237 252 255);
+  padding-inline: 0;
+}
+
+#partnership-form .formContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.formContainer form {
+  width: 70%;
+  max-width: 750px;
+}
+
+.formContainer .formImage {
+  width: 30%;
+}
+
+.formContainer .formImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.formContainer .form-field {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+label {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  width: fit-content;
+}
+
+label span {
+  color: red;
+}
+
+input,
+select,
+textarea {
+  background-color: #ffffff;
+  color: var(--text-color);
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s ease;
+}
+
+select {
+  padding-right: 2rem; /* Space for the arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../assets/images/dropdown-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) center;
+  background-size: 12px;
+}
+
+textarea {
+  min-height: 150px;
+  max-width: 750px;
+}
+
+form button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 65px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border: 1px solid rgb(8 116 231);
+  box-shadow: 0 0 0 4px #1974e740;
+}
+
+form button:hover {
+  background-color: var(--primary-color);
+}
+
+.form-field.error input:focus,
+.form-field.error select:focus,
+.form-field.error textarea:focus {
+  box-shadow: 0 0 0 4px #e7191940;
+}
+
+.form-field.error input,
+.form-field.error select,
+.form-field.error textarea {
+  border-color: #e71919;
+}
+
+.error-message {
+  display: none;
+  width: 100%;
+  color: red;
+  font-weight: 540;
+  margin-top: 8px;
+}
+
+.form-field.error .error-message {
+  display: block;
+}
+
+#form-error {
+  margin-bottom: 10px;
+}

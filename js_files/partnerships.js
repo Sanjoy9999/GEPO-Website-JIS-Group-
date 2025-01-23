@@ -1,16 +1,62 @@
-var map = L.map("partnerMap").setView([0, 0], 2);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+const form = document.querySelector("form");
+const inputField = document.querySelectorAll(".input-field");
+const formError = document.getElementById("form-error");
 
-// Add markers for partner institutions
-var partners = [
-  { name: "University XYZ", lat: 40.7128, lon: -74.006 },
-  { name: "ABC University", lat: 51.5074, lon: -0.1278 },
-  { name: "DEF Business School", lat: 35.6762, lon: 139.6503 },
-];
+function onError(field, message) {
+  const parentField = field.parentElement;
 
-partners.forEach(function (partner) {
-  L.marker([partner.lat, partner.lon]).addTo(map).bindPopup(partner.name);
+  parentField.classList.add("error");
+  parentField.classList.remove("success");
+  const errorElement = parentField.querySelector(".error-message");
+  errorElement.textContent = message;
+}
+
+function onSuccess(field) {
+  const parentField = field.parentElement;
+
+  parentField.classList.remove("error");
+  parentField.classList.add("success");
+  formError.style.display = "none";
+  const errorElement = parentField.querySelector(".error-message");
+  errorElement.textContent = "";
+}
+
+inputField.forEach((field) => {
+  field.addEventListener("input", (e) => {
+    const value = field.value.trim();
+    const name = field.name.split("-").join(" ");
+
+    if (value === "") {
+      const message = `${name} is Required`;
+      onError(field, message);
+    } else if (field.type !== "email" && value.length < 3) {
+      onError(field, `${name} must be at least 3 characters long`);
+    } else {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (field.type === "email" && !emailPattern.test(value)) {
+        onError(field, `Email Is Invalid`);
+      } else {
+        onSuccess(field);
+      }
+    }
+  });
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const successFields = document.querySelectorAll(".success");
+  console.log(inputField.length, successFields.length);
+
+  if (successFields.length !== inputField.length) {
+    formError.style.display = "block";
+    formError.textContent = "Please fill in all required fields.";
+    return;
+  }
+
+  formError.style.display = "none";
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  console.log(data);
+  form.reset();
 });
