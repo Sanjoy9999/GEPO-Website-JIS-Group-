@@ -13,14 +13,14 @@
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="stylesheet" href="../css_files/partnerships.css" />
   </head>
   <body>
-    <!-- <header>
+    <header>
       <nav>
         <div class="logo">
           <a href="/" class="active"
@@ -39,18 +39,20 @@
           <li><a href="../admin/admin.html">Admin</a></li>
         </ul>
       </nav>
-    </header> -->
+    </header>
 
     <main>
-      <section class="hero">
+      <section id="map-section">
         <div id="map"></div>
       </section>
 
       <section id="success-story" class="section">
-        <div class="container swiper">
+        <div class="container">
           <h2 class="section-title">Success Stories</h2>
-          <div class="card-container swiper-wrapper"></div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </section>
 

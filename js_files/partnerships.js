@@ -101,14 +101,16 @@ map.on("error", (e) => {
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // success stories script
-const cardContainer = document.querySelector(".card-container");
+const cardContainer = document.querySelector(".swiper-wrapper");
 
 function initStories() {
   stories.forEach(renderStory);
   initSwiper();
 }
 function renderStory(story) {
-  const html = `<div class="card swiper-slide animate-on-scroll">
+  const html = `
+  <div class="swiper-slide">
+  <div class="card animate-on-scroll">
               <div class="studentDetails">
                 <img
                   src="${story.image}"
@@ -126,51 +128,39 @@ function renderStory(story) {
                 />
                 </div>
               </div>
-            </div>`;
+            </div>
+            </div>
+            `;
 
   cardContainer.innerHTML += html;
 }
 
+// Swiper Script
 function initSwiper() {
-  const cardCount = document.querySelectorAll("#success-story .card").length;
-  console.log(cardCount);
-
-  // Initialize Swiper only if there are enough cards to swipe
-  if (cardCount > 1) {
-    new Swiper(".swiper", {
-      slidesPerView: 1, // Default for mobile
-      spaceBetween: 20,
-      // loop: true,
-      cursorGrab: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      770: {
+        slidesPerView: 2,
+        spaceBetween: 20,
       },
-      grid: {
-        rows: 1, // Default for mobile
-        fill: "row", // Ensures cards fill rows first
+      1080: {
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          grid: {
-            rows: 2, // Two rows on tablets
-          },
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          grid: {
-            rows: 2, // Two rows on desktops
-          },
-          spaceBetween: 20,
-        },
-      },
-    });
-  } else {
-    // Add fallback for single card or no cards
-    document.querySelector(".swiper").classList.add("no-swiper");
-  }
+    },
+  });
 }
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -270,64 +260,63 @@ const countries = ["USA", "India", "Germany", "France", "Canada"];
 initMapMarker();
 const stories = [
   {
-    name: "Jane Smith",
+    name: "Naveenkumar",
+    image: "https://publicassets.leverageedu.com/stories/naveen.webp",
+    story:
+      "I applied to 4 universities and I got offers from 2 universities. GEPO helped me through entire process to pursue masters. They have separate teams to handle all this.",
+    stream: "Data Science",
+    university: "Central Michigan University",
+    universityImage:
+      "https://lepublicassets.leverageedu.com/testimonials/universities/2260.png",
+  },
+  {
+    name: "Shreya",
+    image: "https://publicassets.leverageedu.com/stories/shreya.webp",
+    story:
+      "GEPO is proactive, detail-oriented, and trustworthy. They made my study abroad dream a breeze. Shoutout to the team for showcasing their excellence!",
+    stream: "Management",
+    university: "Berlin School of Business and Innovation",
+    universityImage:
+      "https://publicassets.leverageedu.com/testimonials/universities/1032.png",
+  },
+  {
+    name: "Hanna",
+    image: "https://publicassets.leverageedu.com/stories/hanna.webp",
+    story:
+      "GEPO made it incredibly convenient. Deepa, the consultant, provided excellent guidance. I'm thrilled with the all-in-one support for loans, forex, and accommodation.",
+    stream: "Data Science",
+    university: "Humber University",
+    universityImage:
+      "https://lepublicassets.leverageedu.com/testimonials/universities/2092.png",
+  },
+  {
+    name: "Kshitij",
     image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
     story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
+      "My GEPO coach made studying abroad a breeze. From university shortlisting to visa application, they guided me every step of the way.",
+    stream: "Data Science",
+    university: "University of Birmingham",
     universityImage:
       "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
   },
   {
-    name: "Jane Smith",
-    image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
+    name: "Samad",
+    image: "https://publicassets.leverageedu.com/stories/samad.webp",
     story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
+      "Extremely satisfied with GEPO for my college application process. Deserves a perfect 5/5 rating!",
+    stream: "Data Science",
+    university: "Queen Mary University of London",
     universityImage:
-      "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
+      "https://lepublicassets.leverageedu.com/testimonials/universities/128.png",
   },
   {
-    name: "Jane Smith",
-    image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
+    name: "Shubham",
+    image: "https://publicassets.leverageedu.com/stories/shubham.webp",
     story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
+      "Smooth process, supportive loan team, highly satisfied with GEPO's loan experience. Great service!",
+    university: "University of Illinois at Urbana-Champaign",
     universityImage:
-      "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
-  },
-  {
-    name: "Jane Smith",
-    image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
-    story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
-    universityImage:
-      "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
-  },
-  {
-    name: "Jane Smith",
-    image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
-    story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
-    universityImage:
-      "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
-  },
-  {
-    name: "Jane Smith",
-    image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
-    story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
-    universityImage:
-      "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
+      "https://lepublicassets.leverageedu.com/testimonials/universities/26.png",
   },
 ];
 initStories();
