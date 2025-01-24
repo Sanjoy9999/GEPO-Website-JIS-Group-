@@ -13,14 +13,14 @@
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="stylesheet" href="../css_files/partnerships.css" />
   </head>
   <body>
-    <!-- <header>
+    <header>
       <nav>
         <div class="logo">
           <a href="/" class="active"
@@ -39,18 +39,20 @@
           <li><a href="../admin/admin.html">Admin</a></li>
         </ul>
       </nav>
-    </header> -->
+    </header>
 
     <main>
-      <section class="hero">
+      <section id="map-section">
         <div id="map"></div>
       </section>
 
       <section id="success-story" class="section">
-        <div class="container swiper">
+        <div class="container">
           <h2 class="section-title">Success Stories</h2>
-          <div class="card-container swiper-wrapper"></div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </section>
 
@@ -142,7 +144,7 @@
             Guidelines for Establishing New Partnerships
           </h2>
           <div id="guidelines">
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>
                   Identify potential partner institutions aligned with our
@@ -160,7 +162,7 @@
                 </p>
               </div>
             </div>
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>
                   Conduct initial discussions to explore mutual interests and
@@ -178,7 +180,7 @@
                 </p>
               </div>
             </div>
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>
                   Develop a detailed proposal outlining the scope of the
@@ -194,7 +196,7 @@
                 </p>
               </div>
             </div>
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>
                   Review and approval process by relevant committees and
@@ -212,7 +214,7 @@
                 </p>
               </div>
             </div>
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>Draft and sign a Memorandum of Understanding (MoU).</h5>
                 <span>+</span>
@@ -229,7 +231,7 @@
                 </p>
               </div>
             </div>
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>
                   Implement the partnership activities and monitor progress.
@@ -249,7 +251,7 @@
                 </p>
               </div>
             </div>
-            <div class="custom-details-box">
+            <div class="custom-details-box animate-on-scroll">
               <div class="guideLineSummery">
                 <h5>Regular evaluation and renewal of the partnership.</h5>
                 <span>+</span>
@@ -270,7 +272,7 @@
             href="https://pdfobject.com/pdf/sample.pdf"
             download="sample.pdf"
             target="_blank"
-            class="cta-button"
+            class="cta-button animate-on-scroll"
             id="download-resource"
           >
             <img src="../assets/images/download-icon.png" alt="Download" />

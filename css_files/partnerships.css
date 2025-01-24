@@ -2,10 +2,14 @@
   width: 85%;
 }
 
+/* #success-story .container {
+  width: 90%;
+} */
+
 #map {
   width: 100%;
-  max-height: 60vh;
-  height: 100%;
+  max-height: 550px;
+  height: 100vh;
 }
 
 .tooltip {
@@ -26,16 +30,22 @@
 }
 
 #success-story {
-  padding: 4rem;
+  padding: 3rem 4rem;
 }
 
-#success-story .swiper {
+.swiper {
   width: 100%;
 }
 
-#success-story .swiper-wrapper {
+.swiper-slide {
   display: flex;
-  flex-wrap: wrap; /* Ensures proper grid layout compatibility */
+  justify-content: center;
+  max-width: 340px;
+  min-height: 300px;
+}
+
+.swiper-pagination {
+  margin-top: 6px;
 }
 
 #success-story .card {
@@ -50,7 +60,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: ; */
 }
 
 #success-story .card .studentDetails {
@@ -123,7 +132,7 @@
 }
 
 .formContainer form {
-  width: 70%;
+  width: 100%;
   max-width: 750px;
 }
 
@@ -322,4 +331,45 @@ form button:hover {
 #partnership-guidelines #download-resource img {
   width: 20px;
   margin-right: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 990px) {
+  .formContainer .formImage {
+    display: none;
+    width: 0;
+  }
+}
+
+/* for section heading => 768, 425, 325  */
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+  }
+  #success-story .container {
+    padding: 0;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section {
+    padding-top: 1rem;
+  }
+
+  #success-story,
+  .section .container {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .section-title {
+    font-size: 18px;
+  }
 }
