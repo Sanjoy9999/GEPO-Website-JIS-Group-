@@ -42,7 +42,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding-inline: 2rem 0.5rem;
 }
 
 /* Logo Styling */
@@ -60,8 +60,6 @@ nav .logo img {
 nav ul {
   display: flex;
   list-style: none;
-  position: absolute;
-  right: -10px;
 }
 
 nav ul li {
@@ -123,7 +121,6 @@ nav ul li a:hover {
 .carousel-controls button:hover {
   background-color: black;
 }
-
 
 /* Hero Section Styles */
 .hero {
@@ -223,7 +220,7 @@ nav ul li a:hover {
 footer {
   background-color: var(--primary-color);
   color: #fff;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .footer-content {
