@@ -2,6 +2,114 @@
   width: 85%;
 }
 
+#map {
+  width: 100%;
+  max-height: 60vh;
+  height: 100%;
+}
+
+.tooltip {
+  background: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.marker {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#success-story {
+  padding: 4rem;
+}
+
+#success-story .swiper {
+  width: 100%;
+}
+
+#success-story .swiper-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Ensures proper grid layout compatibility */
+}
+
+#success-story .card {
+  width: 100%;
+  max-width: 340px;
+  min-height: 300px;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #e0e4e9;
+  background-color: rgb(245, 246, 248);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: ; */
+}
+
+#success-story .card .studentDetails {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#success-story .card .studentDetails img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 0;
+  border: 1px solid #1f1f1f;
+}
+
+#success-story .card .studentDetails .studentName {
+  font-size: 17px;
+}
+
+#success-story .card .story {
+  margin-block: 1rem;
+  font-size: 16px;
+  text-align: start;
+  color: var(--text-color);
+  font-weight: 400;
+  line-height: 22px;
+}
+
+#success-story .card .educationDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#success-story .card .educationDetails .stream {
+  font-size: 12px;
+  text-align: center;
+  color: #0ea5e9;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(14, 165, 233, 0.1);
+  user-select: none;
+  cursor: default;
+}
+
+#success-story .card .educationDetails .universityImage {
+  width: 100px;
+}
+
+#success-story .card .educationDetails .universityImage img {
+  width: 100%;
+  object-fit: cover;
+}
+
 #partnership-form {
   background-color: rgb(237 252 255);
   padding-inline: 0;
@@ -130,4 +238,88 @@ form button:hover {
 
 #form-error {
   margin-bottom: 10px;
+}
+
+/* Partnerships guideline section */
+#guidelines {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+#guidelines .custom-details-box {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#guidelines .custom-details-box .guideLineSummery {
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 8px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.1);
+}
+
+#guidelines .custom-details-box .guideLineSummery h5 {
+  font-size: 16px;
+}
+
+#guidelines .custom-details-box .guideLineSummery span {
+  color: #00000066;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+#guidelines .custom-details-box.open .guideLineSummery span {
+  transform: rotate(135deg);
+}
+
+#guidelines .custom-details-box .guideLineContent {
+  width: 100%;
+  font-size: 16px;
+  color: #535353f5;
+  line-height: 24px;
+  background-color: #ffffff8c;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow: hidden;
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+#guidelines .custom-details-box .guideLineContent p {
+  padding: 15px 20px;
+  margin: 0;
+}
+
+#guidelines .custom-details-box.open .guideLineSummery {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#partnership-guidelines #download-resource {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#partnership-guidelines #download-resource img {
+  width: 20px;
+  margin-right: 20px;
 }
