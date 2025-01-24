@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll(); // Initial check on page load
 });
 
+
+
+
+
 // JavaScript for Carousel 
 
 const images = document.querySelectorAll('.carousel img');

@@ -1,4 +1,190 @@
+Since there is no selected code, I will provide a general improvement to the existing code. Here's a modified version of the HTML structure with some improvements:
+
+```html
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEPO - Home</title>
+  <link rel="stylesheet" href="./css_files/styles.css" />
+  <link rel="shortcut icon" href="./assets/images/favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#">
+          <img src="./assets/images/logo.png" alt="JIS Logo" loading="lazy" />
+        </a>
+      </div>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="./html_files/about.html">About Us</a></li>
+        <li>
+          <a href="./html_files/partnerships.html">Global Partnerships</a>
+        </li>
+        <li>
+          <a href="./html_files/programs.html">Programs & Initiatives</a>
+        </li>
+        <li><a href="./html_files/resources.html">Resources & Support</a></li>
+        <li><a href="./html_files/events.html">Events & News</a></li>
+        <li><a href="./html_files/contact.html">Contact Us</a></li>
+        <li><a href="./html_files/login.html">Login</a></li>
+        <li><a href="./admin/admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <img src="./assets/images/Image1.jpg" class="active" alt="Partnership Image 1" loading="lazy">
+        <img src="./assets/images/Image2.jpg" alt="Partnership Image 2" loading="lazy">
+        <img src="./assets/images/Image3.webp" alt="Partnership Image 3" loading="lazy">
+      </div>
+      <div class="carousel-controls">
+        <button id="prev">&laquo; Prev</button>
+        <button id="next">Next &raquo;</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          Your Gateway to Global Collaboration and International Opportunities
+        </h1>
+        <p>
+          Explore a world of possibilities with the Global Engagement & Partnerships Office
+        </p>
+        <a href="./html_files/partnerships.html" class="cta-button"
+          >Partner with Us</a
+        >
+        <a href="./html_files/programs.html" class="cta-button"
+          >Join a Program</a
+        >
+        <a href="./html_files/contact.html" class="cta-button">Contact Us</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Quick Links</h2>
+        <div class="card-container">
+          <div class="card animate-on-scroll">
+            <h3>Study Abroad Programs</h3>
+            <p>
+              Explore opportunities to study at our partner universities worldwide.
+            </p>
+            <a href="./html_files/programs.html" class="cta-button"
+              >Learn More</a
+            >
+          </div>
+          <div class="card animate-on-scroll">
+            <h3>International Admissions</h3>
+            <p>Join our diverse community of international students.</p>
+            <a href="./html_files/contact.html" class="cta-button"
+              >Apply Now</a
+            >
+          </div>
+          <div class="card animate-on-scroll">
+            <h3>Faculty Exchange Programs</h3>
+            <p>
+              Enhance your teaching and research through international collaborations.
+            </p>
+            <a href="./html_files/partnerships.html" class="cta-button"
+              >Explore Options</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Latest News</h2>
+        <div class="card-container">
+          <div class="card animate-on-scroll">
+            <h3>New Partnership Announced</h3>
+            <p>
+              JIS partners with University of XYZ for groundbreaking research collaboration.
+            </p>
+            <a href="./html_files/events.html" class="cta-button"
+              >Read More</a
+            >
+          </div>
+          <div class="card animate-on-scroll">
+            <h3>Upcoming International Conference</h3>
+            <p>Join us for the Annual Global Education Summit this fall.</p>
+            <a href="./html_files/login.html?type=register" class="cta-button"
+              >Register Now</a
+            >
+          </div>
+          <div class="card animate-on-scroll">
+            <h3>Student Success Story</h3>
+            <p>JIS exchange student wins prestigious international award.</p>
+            <a href="./html_files/partnerships.html#sucess-story" class="cta-button"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>
+            <a href="./html_files/programs.html">Study Abroad Programs</a>
+          </li>
+          <li>
+            <a href="./html_files/programs.html">International Admissions</a>
+          </li>
+          <li>
+            <a href="./html_files/programs.html">Faculty Exchange Programs</a>
+          </li>
+          <li>
+            <a href="./html_files/partnerships.html"
+              >Research Collaborations</a
+            >
+          </li>
+          <li>
+            <a href="./html_files/events.html"
+              >Upcoming International Events</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Global Engagement & Partnerships Office</p>
+        <p>Email: gepo@jis.edu</p>
+        <p>Phone: +1 234 567 8900</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2023 Global Engagement & Partnerships Office. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="./js_files/script.js" defer></script>
+</body>
+</html>
+```<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -84,7 +270,7 @@
             <div class="card animate-on-scroll">
               <h3>International Admissions</h3>
               <p>Join our diverse community of international students.</p>
-              <a href="./html_files/programs.html" class="cta-button"
+              <a href="./html_files/contact.html" class="cta-button"
                 >Apply Now</a
               >
             </div>
@@ -94,7 +280,7 @@
                 Enhance your teaching and research through international
                 collaborations.
               </p>
-              <a href="./html_files/programs.html" class="cta-button"
+              <a href="./html_files/partnerships.html" class="cta-button"
                 >Explore Options</a
               >
             </div>
@@ -119,14 +305,14 @@
             <div class="card animate-on-scroll">
               <h3>Upcoming International Conference</h3>
               <p>Join us for the Annual Global Education Summit this fall.</p>
-              <a href="./html_files/events.html" class="cta-button"
+              <a href="./html_files/login.html?type=register" class="cta-button"
                 >Register Now</a
               >
             </div>
             <div class="card animate-on-scroll">
               <h3>Student Success Story</h3>
               <p>JIS exchange student wins prestigious international award.</p>
-              <a href="./html_files/events.html" class="cta-button"
+              <a href="./html_files/partnerships.html#sucess-story" class="cta-button"
                 >Read More</a
               >
             </div>
