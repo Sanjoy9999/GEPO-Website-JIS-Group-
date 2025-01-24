@@ -38,7 +38,7 @@ async function fetchCountryAndMakeMarker(countryName) {
 const map = new maplibregl.Map({
   container: "map", // Container ID
   style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json", // Map style URL
-  center: [78.9629, 22.3511148], // Center of the world [lng, lat]
+  center: [78.9629, 50.3511148],
   zoom: 0.1, // Fit the whole world
   interactive: true, // Disable interactions
 });
@@ -52,7 +52,7 @@ map.keyboard.disable();
 window.addEventListener("resize", (e) => {
   console.log(document.innerHight, document.innerHeight);
 
-  map.resize();
+  map.zoomTo(0.1);
 });
 
 map.on("load", () => {
@@ -97,10 +97,6 @@ function addMarker(country) {
 
 map.on("error", (e) => {
   console.error("Map-libre error:", e.error);
-});
-
-map.on("resize", (e) => {
-  console.log("Map resized");
 });
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -273,16 +269,6 @@ guidelineSummaries.forEach((summary) => {
 const countries = ["USA", "India", "Germany", "France", "Canada"];
 initMapMarker();
 const stories = [
-  {
-    name: "Jane Smith",
-    image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
-    story:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est itaque cupiditate perferendis maxime, praesentium, id expedita, ipsam quasi eum ducimus nostrum et totam eos culpa ad voluptatum tenetur placeat consequuntur.",
-    stream: "Web Developer",
-    university: "XYZ University",
-    universityImage:
-      "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
-  },
   {
     name: "Jane Smith",
     image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
