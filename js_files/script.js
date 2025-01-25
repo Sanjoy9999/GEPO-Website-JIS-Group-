@@ -24,6 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", animateOnScroll);
   animateOnScroll(); // Initial check on page load
+
+  // Add floating button
+  document.body.innerHTML += `
+      <!-- floating Buttons for contact-->
+
+    <div class="floating-buttons">
+      <a href="https://wa.me/123456789" class="floating-button">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:123456789" class="floating-button">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+  `;
 });
 
 // JavaScript for Carousel
