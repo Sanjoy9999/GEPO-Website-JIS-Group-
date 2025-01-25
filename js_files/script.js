@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // adding favicon for all page
   const link = document.createElement("link");
   link.rel = "shortcut icon";
-  link.href = `${
-    location.pathname.includes("index.html") ? "." : ".."
-  }/assets/images/logo.png`;
+  link.href = `${location.pathname.includes("index.html") ? "." : ".."
+    }/assets/images/logo.png`;
   link.type = "image/x-icon";
   document.head.appendChild(link);
 
@@ -52,3 +51,23 @@ if (location.pathname.includes("index.html")) {
     showImage(currentIndex);
   }, 3000); // Change interval to 2 seconds
 }
+
+
+// hamburger section
+let hamburger = document.querySelector(".hamburger");
+let navBar = document.querySelector("#navBar")
+console.log(hamburger)
+let menuOpen = false;
+
+hamburger.addEventListener('click', (e) => {
+  console.log("Hamburger clicked");
+  if (!menuOpen) {
+    navBar.style.left = "0"; // Show the menu
+    e.target.style.transform = "rotate(180deg)";
+  } else {
+    navBar.style.left = "100%"; // Hide the menu
+    e.target.style.transform = "rotate(-180deg)";
+  }
+  menuOpen = !menuOpen;
+});
+
