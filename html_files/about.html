@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GEPO - About Us</title>
-    <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="../css_files/styles.css" />
+    <link
+      rel="stylesheet"
+      href="../utils/details-dropdown/details-dropdown.css"
+    />
   </head>
   <body>
     <header>
@@ -110,31 +114,10 @@
       <section class="section">
         <div class="container">
           <h2 class="section-title">FAQs</h2>
-          <div class="faq-container animate-on-scroll">
-            <div class="faq-item">
-              <h3>What services does GEPO provide?</h3>
-              <p>
-                GEPO offers a wide range of services including study abroad
-                programs, international partnerships, faculty exchange programs,
-                and support for international students and scholars.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>How can I participate in a study abroad program?</h3>
-              <p>
-                Visit our Programs & Initiatives page to explore available study
-                abroad opportunities and application procedures.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>Does GEPO offer scholarships for international programs?</h3>
-              <p>
-                Yes, we offer various scholarships and financial aid options for
-                students participating in our international programs. Check our
-                Resources & Support page for more information.
-              </p>
-            </div>
-          </div>
+          <div
+            class="faq-container animate-on-scroll"
+            id="details-container"
+          ></div>
         </div>
       </section>
     </main>
@@ -174,6 +157,8 @@
       </div>
     </footer>
 
+    <script src="../utils/details-dropdown/details-dropdown.js"></script>
     <script src="../js_files/script.js"></script>
+    <script src="../js_files/about.js"></script>
   </body>
 </html>
