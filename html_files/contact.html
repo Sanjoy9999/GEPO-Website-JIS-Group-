@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GEPO - Contact & Support</title>
-    <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="../utils/details-dropdown/details-dropdown.css"
+    />
+    <link rel="stylesheet" href="../css_files/styles.css" />
   </head>
   <body>
     <header>
@@ -101,35 +105,10 @@
         </div>
       </section>
 
-      <section id="faq" class="section">
+      <section class="section">
         <div class="container">
           <h2 class="section-title">Frequently Asked Questions</h2>
-          <div class="faq-container animate-on-scroll">
-            <div class="faq-item">
-              <h3>How do I apply for a study abroad program?</h3>
-              <p>
-                Visit our Programs & Initiatives page and follow the application
-                process for your chosen program.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>
-                What financial aid options are available for international
-                students?
-              </h3>
-              <p>
-                We offer various scholarships and grants. Check our Resources &
-                Support page for more information.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>How can faculty members participate in exchange programs?</h3>
-              <p>
-                Faculty can explore opportunities on our Faculty & Research
-                Exchange section under Programs & Initiatives.
-              </p>
-            </div>
-          </div>
+          <div class="animate-on-scroll" id="details-container"></div>
         </div>
       </section>
     </main>
@@ -170,6 +149,8 @@
       </div>
     </footer>
 
+    <script src="../utils/details-dropdown/details-dropdown.js"></script>
     <script src="../js_files/script.js"></script>
+    <script src="../js_files/contact.js"></script>
   </body>
 </html>
