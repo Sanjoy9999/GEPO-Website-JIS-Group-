@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GEPO - Contact & Support</title>
-    <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4bd740a6dc.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css_files/styles.css" />
+    <link rel="stylesheet" href="../css_files/contact.css" />
   </head>
   <body>
     <header>
@@ -31,103 +35,111 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section id="contact-hero">
         <div class="hero-content">
-          <h1>Contact & Support</h1>
-          <p>We're here to assist you with any questions or concerns</p>
+          <h1>Get in Touch</h1>
+          <p>
+            Need help? Connect with us through multiple channels for quick and
+            convenient assistance. You can reach us by phone at +1 (123)
+            456-7890, email at support@example.com, or by filling out the
+            inquiry form below. Our team is available to answer your questions
+            Monday-Friday, 9am-5pm.
+          </p>
         </div>
       </section>
 
-      <section id="contact-info" class="section">
-        <div class="container">
-          <h2 class="section-title">Contact Information</h2>
-          <div class="contact-details animate-on-scroll">
-            <p>
-              <strong>Address:</strong> 123 University Ave, City, State, ZIP
-            </p>
-            <p><strong>Email:</strong> gepo@jis.edu</p>
-            <p><strong>Phone:</strong> +1 234 567 8900</p>
-            <p>
-              <strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM
-            </p>
+      <section id="inquiry-section" class="section">
+        <div id="contact-container" class="animate-on-scroll">
+          <div id="form-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <form action="#" id="contact-form">
+              <div class="form-field">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-field">
+                <label for="inquiry-type">Inquiry Type</label>
+                <select id="inquiry-type" name="inquiry-type" required>
+                  <option value="" hidden>Select an option</option>
+                  <option value="student">Student Inquiry</option>
+                  <option value="faculty">Faculty Inquiry</option>
+                  <option value="partner">Prospective Partner Inquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="separate-line"></div>
+          <div id="contactInfo-container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="info-container">
+              <i class="fa-solid fa-location-dot info-icon"></i>
+              <div class="info-content">
+                <h3>Address</h3>
+                <p>123 Main Street, Anytown, USA</p>
+              </div>
+            </div>
+            <div class="info-container">
+              <i class="fa-regular fa-envelope info-icon"></i>
+              <div class="info-content">
+                <h3>Email</h3>
+                <p>support@example.com</p>
+              </div>
+            </div>
+            <div class="info-container">
+              <i class="fa-solid fa-phone info-icon"></i>
+              <div class="info-content">
+                <h3>Phone</h3>
+                <p>+1 234 567 8900</p>
+              </div>
+            </div>
+            <div class="info-container">
+              <i class="fas fa-building info-icon"></i>
+              <div class="info-content">
+                <h3>Office Hours</h3>
+                <p>Monday - Friday, 9:00 AM - 5:00 PM</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="live-chat" class="section">
+      <section id="liveChat-section">
+        <h2 class="section-title">Live Chat</h2>
         <div class="container">
-          <h2 class="section-title">Live Chat Support</h2>
-          <div class="live-chat-container animate-on-scroll">
-            <!-- Live chat component would go here -->
-            <p>Chat with our support team for immediate assistance.</p>
-            <button class="cta-button">Start Chat</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="inquiry-form" class="section">
-        <div class="container">
-          <h2 class="section-title">Inquiry Form</h2>
-          <form class="contact-form animate-on-scroll">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
+          <img
+            src="../assets/images/liveChat-Image.avif"
+            alt=""
+            id="liveChat-image"
+          />
+          <div class="card-container">
+            <div class="card animate-on-scroll">
+              <img src="../assets/images/whatsapp-image.avif" alt="whatsapp" />
+              <h3>live Chat</h3>
+              <p>Get instant help through our live chat feature.</p>
+              <button>
+                <a href="https://wa.me/123456789">Go To whatsapp</a>
+              </button>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="inquiry-type">Inquiry Type</label>
-              <select id="inquiry-type" name="inquiry-type" required>
-                <option value="">Select an option</option>
-                <option value="student">Student Inquiry</option>
-                <option value="faculty">Faculty Inquiry</option>
-                <option value="partner">Prospective Partner Inquiry</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="cta-button">Submit Inquiry</button>
-          </form>
-        </div>
-      </section>
-
-      <section id="faq" class="section">
-        <div class="container">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <div class="faq-container animate-on-scroll">
-            <div class="faq-item">
-              <h3>How do I apply for a study abroad program?</h3>
-              <p>
-                Visit our Programs & Initiatives page and follow the application
-                process for your chosen program.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>
-                What financial aid options are available for international
-                students?
-              </h3>
-              <p>
-                We offer various scholarships and grants. Check our Resources &
-                Support page for more information.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>How can faculty members participate in exchange programs?</h3>
-              <p>
-                Faculty can explore opportunities on our Faculty & Research
-                Exchange section under Programs & Initiatives.
-              </p>
+            <div class="card animate-on-scroll">
+              <img
+                src="../assets/images/customer-care.avif"
+                alt="Phone support"
+              />
+              <h3>Phone Support</h3>
+              <p>Speak with a representative directly.</p>
+              <button>
+                <a href="tel:+123456789">Call Now</a>
+              </button>
             </div>
           </div>
         </div>
@@ -171,5 +183,6 @@
     </footer>
 
     <script src="../js_files/script.js"></script>
+    <script src="../js_files/contact.js"></script>
   </body>
 </html>
