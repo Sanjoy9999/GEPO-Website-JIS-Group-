@@ -26,19 +26,42 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll(); // Initial check on page load
 
   // Add floating button
-  document.body.innerHTML += `
-      <!-- floating Buttons for contact-->
-
-    <div class="floating-buttons">
-      <a href="https://wa.me/123456789" class="floating-button">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="tel:123456789" class="floating-button">
-        <i class="fas fa-phone"></i>
-      </a>
-    </div>
-  `;
+  renderFloatingButton();
 });
+
+function renderFloatingButton() {
+  const floatingButtonsContainer = document.createElement("div");
+  floatingButtonsContainer.classList.add("floating-buttons");
+
+  // Create WhatsApp button
+  const whatsappButton = document.createElement("a");
+  whatsappButton.href = "https://wa.me/123456789";
+  whatsappButton.classList.add("floating-button");
+
+  const whatsappIcon = document.createElement("i");
+  whatsappIcon.classList.add("fab", "fa-whatsapp");
+
+  // Append WhatsApp icon to the button
+  whatsappButton.appendChild(whatsappIcon);
+
+  // Create Phone button
+  const phoneButton = document.createElement("a");
+  phoneButton.href = "tel:123456789";
+  phoneButton.classList.add("floating-button");
+
+  const phoneIcon = document.createElement("i");
+  phoneIcon.classList.add("fas", "fa-phone");
+
+  // Append Phone icon to the button
+  phoneButton.appendChild(phoneIcon);
+
+  // Append buttons to the container
+  floatingButtonsContainer.appendChild(whatsappButton);
+  floatingButtonsContainer.appendChild(phoneButton);
+
+  // Append the container to the body (or any other parent element)
+  document.body.appendChild(floatingButtonsContainer);
+}
 
 // JavaScript for Carousel
 if (location.pathname.includes("index.html")) {
