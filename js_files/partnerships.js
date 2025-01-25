@@ -233,27 +233,49 @@ form.addEventListener("submit", (e) => {
 });
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// guideline script
-const guidelineSummaries = document.querySelectorAll(".guideLineSummery");
+const details = [
+  {
+    summary:
+      "Identify potential partner institutions aligned with our strategic goals.",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet repudiandae nihil voluptas, necessitatibus porro veritatis assumenda quo sint, ipsam, corporis quos? Nostrum laboriosam odit autem blanditiis accusamus facere excepturi aliquam!",
+  },
+  {
+    summary:
+      "Conduct initial discussions to explore mutual interests and benefits.",
+    content:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, fugit in? Assumenda quam consequatur nisi soluta magnam ex eligendi. Dolorem quos non hic doloremque. Corporis quae cupiditate consequatur impedit officia veritatis culpa, eum eveniet. Et labore numquam ipsum architecto corporis.",
+  },
+  {
+    summary:
+      "Develop a detailed proposal outlining the scope of the partnership.",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia error id alias laboriosam maxime eveniet minima aliquid suscipit reiciendis eos!",
+  },
+  {
+    summary:
+      "Review and approval process by relevant committees and leadership.",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi exercitationem, aliquam porro minima ex accusantium quasi soluta ut repellendus nam nemo hic amet dignissimos repudiandae, ratione possimus vitae. Nemo molestias quam laborum similique cupiditate alias!",
+  },
+  {
+    summary: "Draft and sign a Memorandum of Understanding (MoU).",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe neque in odit dicta voluptas iste, ut tempore, quo suscipit fugiat atque excepturi dolorum totam nisi animi, sapiente recusandae nulla accusantium minima minus harum et repudiandae. Delectus sapiente corrupti iusto velit! Amet repellendus quam necessitatibus accusamus, animi saepe voluptatem sint tenetur.",
+  },
+  {
+    summary: "Implement the partnership activities and monitor progress.",
+    content:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo ullam impedit sunt aut, laborum vitae porro adipisci ab nemo doloribus quidem, asperiores consectetur repellendus quos nam est natus ipsa voluptatibus veritatis. Quos voluptates modi excepturi corporis, laborum nam aliquam numquam? Nulla minus possimus, laboriosam ab nostrum quibusdam quisquam. Fugiat, consectetur necessitatibus voluptate in modi ea itaque quae animi non hic.",
+  },
+  {
+    summary: "Regular evaluation and renewal of the partnership.",
+    content:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, quam necessitatibus odio sed ipsa magni autem rerum, amet at placeat fugiat libero, dolor est? Quisquam asperiores unde culpa enim sit doloremque impedit magni consequatur optio neque maiores nulla laboriosam nam facere amet, corrupti blanditiis fugiat.",
+  },
+];
 
-guidelineSummaries.forEach((summary) => {
-  const parent = summary.parentElement;
-  const content = parent.querySelector(".guideLineContent");
-
-  summary.addEventListener("click", () => {
-    if (parent.classList.contains("open")) {
-      // Closing the content
-      content.style.height = "0";
-      parent.classList.remove("open");
-    } else {
-      // Opening the content
-      const contentHeight = content.scrollHeight + "px";
-      parent.classList.add("open");
-      content.style.height = contentHeight;
-    }
-  });
-});
-
+initializeDetails(details);
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // All render Data
 const countries = ["USA", "India", "Germany", "France", "Canada"];
