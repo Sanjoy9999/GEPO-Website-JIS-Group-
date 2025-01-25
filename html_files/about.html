@@ -6,7 +6,8 @@
     <title>GEPO - About Us</title>
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <link rel="stylesheet" href="../css_files/styles.css" />
+    <link rel="stylesheet" href="/css_files/styles.css">
+    <link rel="stylesheet" href="about.css">
     <link
       rel="stylesheet"
       href="../utils/details-dropdown/details-dropdown.css"
@@ -14,7 +15,15 @@
   </head>
   <body>
     <header>
-      <nav>
+      <div class="hamburger-section">
+        <div class="logo">
+          <a href="#">
+            <img src="/assets/images/logo.png" alt="JIS Logo" loading="lazy" />
+          </a>
+        </div>
+        <img class="hamburger" src="/assets/images/svgs/hamburger.svg" alt="hamburger">
+      </div>
+      <nav id="navBar">
         <div class="logo">
           <a href="../index.html"
             ><img src="../assets/images/logo.png" alt="JIS Logo"
