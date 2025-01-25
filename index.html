@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GEPO - Home</title>
+    
     <link rel="stylesheet" href="./css_files/styles.css" />
     <link rel="shortcut icon" href="./assets/images/favicon.ico" />
     <script
@@ -13,13 +14,23 @@
   </head>
   <body>
     <header>
-      <nav>
+      <div class="hamburger-section">
+        <div class="logo">
+          <a href="#">
+            <img src="./assets/images/logo.png" alt="JIS Logo" loading="lazy" />
+          </a>
+        </div>
+        <img class="hamburger" src="assets/images/svgs/hamburger.svg" alt="hamburger">
+      </div>
+      <nav id="navBar">
+        
         <div class="logo">
           <a href="#">
             <img src="./assets/images/logo.png" alt="JIS Logo" loading="lazy" />
           </a>
         </div>
         <ul>
+          
           <li><a href="#" class="active">Home</a></li>
           <li><a href="./html_files/about.html">About Us</a></li>
           <li>
