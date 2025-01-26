@@ -35,7 +35,9 @@ header {
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  width: 100%;
+
+  z-index: 11;
 }
 
 nav {
@@ -43,18 +45,67 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding-inline: 2rem 0.5rem;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
 }
 
 /* Logo Styling */
 nav .logo {
-  flex-shrink: 0; /* Prevents the logo from shrinking */
+  flex-shrink: 0;
+  /* Prevents the logo from shrinking */
 }
 
+
 nav .logo img {
-  max-height: 80px; /* Adjust for desired logo size */
-  width: auto; /* Maintains aspect ratio */
-  background-color: #fff; /* Fallback color */
-  border-radius: 10px; /* Makes the logo round */
+  max-height: 80px;
+  /* Adjust for desired logo size */
+  width: auto;
+  /* Maintains aspect ratio */
+  background-color: #fff;
+  /* Fallback color */
+  border-radius: 10px;
+  /* Makes the logo round */
+  padding: 10px;
+}
+
+.hamburger-section {
+
+  display: flex;
+  position:fixed;
+  top: -200px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  padding: 20px;
+  visibility: hidden;
+  z-index: 14;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger-section .logo img {
+  max-height: 100px;
+  /* Adjust for desired logo size */
+  width: auto;
+  /* Maintains aspect ratio */
+  background-color: #fff;
+  /* Fallback color */
+  border-radius: 10px;
+  padding: 10px;
+  /* Makes the logo round */
+
+}
+
+.hamburger {
+
+  height: 40px;
+  width: 40px;
+  transition: all 0.5s ease-in-out;
+
+  visibility: hidden;
+
+
 }
 
 nav ul {
@@ -66,8 +117,8 @@ nav ul li {
   padding: 0 1rem;
 }
 
-nav ul li a {
-  color: blue;
+nav ul li >a {
+  color: black;
   text-decoration: none;
   transition: color 0.3s ease;
   background-color: #fff;
@@ -76,14 +127,19 @@ nav ul li a {
   margin-left: -17px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover{
   color: var(--secondary-color);
 }
+
 
 nav ul li a.active {
   background-color: var(--secondary-color);
   color: #fff;
 }
+
+
+
+
 
 /* Carousel Styling */
 .carousel {
@@ -130,10 +186,11 @@ nav ul li a.active {
   background-color: black;
 }
 
+
 /* Hero Section Styles */
 .hero {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,6 +234,7 @@ nav ul li a.active {
 
 /* Section Styles */
 .section {
+  margin-top: 5rem;
   padding: 4rem 0;
 }
 
@@ -202,6 +260,17 @@ nav ul li a.active {
   margin-bottom: 2rem;
   width: calc(33.333% - 2rem);
   transition: transform 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card img{
+  width: 100%;
+  height: 40%;
+  object-fit:cover;
+}
+.quick-links-btn{
+  width: fit-content;
 }
 
 .card:hover {
@@ -288,9 +357,9 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  nav {
+  /* nav {
     flex-direction: column;
-  }
+  } */
 
   nav ul {
     margin-top: 1rem;
@@ -302,5 +371,114 @@ footer {
 
   .footer-section {
     width: 100%;
+  }
+}
+
+@media (max-width: 1283px) {
+  nav ul {
+    font-size: small;
+  }
+}
+
+@media (max-width: 1134px) {
+
+  .hamburger-section {
+    visibility: visible;
+    top: 0;
+  }
+
+  .hamburger {
+    visibility: visible;
+  }
+
+  header {
+    width: 100vw;
+    position:absolute;
+    /* right: 0px; */
+    height: 200%;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  nav {
+    flex-direction: column;
+    /* height: auto; */
+    width: 100vw;
+    display: flex;
+    position: absolute;
+    left: 100%;
+    z-index: 13;
+    /* background-color: #0c5eb0a1; */
+
+  }
+
+  nav ul {
+    margin-top: 100px;
+    flex-direction: column;
+    /* gap: 20px; */
+
+    width: 100vw;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    border: 2px solid navy;
+  }
+
+  nav .logo img {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 910px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: normal;
+
+  }
+  .cta-button{
+    margin: 5px;
+  }
+  .section {
+    margin-top: 5rem;
+    /* padding: 4rem 0; */
+  }
+  .cta-button{
+    padding: 0.4rem 1rem;
+ 
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+    
+
+  }
+  .hero p{
+    font-size: 1rem;
+  }
+  .cta-button{
+    padding: 0.5rem 1.5rem;
+  }
+  .hero-content{
+    /* padding-top: 5rem; */
+  }
+}
+@media (max-width: 376px) {
+  .hero h1 {
+    font-size: 1.65rem;
+    
+
+  }
+  .hero p{
+    font-size: 1rem;
+  }
+  .cta-button{
+    padding: 0.2rem 0.8rem;
+  }
+  .hero-content{
+    /* padding-top: 5rem; */
   }
 }
