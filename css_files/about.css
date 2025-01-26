@@ -27,20 +27,22 @@
 /* .my-hero-style{
     margin-top: 0px;
 } */
-
-.hero-content{
-    background-image: url('../assets/about-images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* opacity: 0.7; */
+.hero-content {
+  background-image: url('../assets/about-images/ab.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 0.7; */
+  height: 100%;
+  min-width: 500px;
+  padding-top: 100px;
 }
 
-.hero-content p{
-    /* color: var(--primary-color);
-    font-weight: bolder;
-    color: black; */
-    background-color: black;
+.hero-content p,
+.hero-content h1 {
+  /* padding: 10px 10px; */
+  text-align: left; 
 }
+
 
 .para{
     text-align: justify;
@@ -48,20 +50,21 @@
 
 .about-section {
     display: flex;
+    flex-direction: column;
     gap: 30px;
   }
   
   .tabs {
-    width: 250px; 
+    /* width: 250px;  */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
   }
   
   .tab {
-    width: 100%;
+    /* width: 100%; */
     background-color: #fff;
     color: #000;
     border: none;
@@ -102,6 +105,10 @@
     display: block;
   }
   
+  #orgizational-structure{
+    width: 100%;
+    margin: auto;
+  }
 .my-sec h2 {
     font-size: 28px;
     color: #000;
@@ -131,3 +138,35 @@
     }
   }
   
+
+
+
+
+
+/* Tablet View (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .hero-content {
+      padding-left: 30px; /* Adjust padding for tablet */
+  }
+
+  .hero-content p,
+  .hero-content h1 {
+      font-size: 1.2rem; /* Slightly smaller font size */
+  }
+}
+
+/* Mobile View (Below 768px) */
+@media (max-width: 767px) {
+  .hero-content {
+      padding-left: 15px; /* Adjust padding for mobile */
+  }
+#orgizational-structure{
+    width: 100%;
+    margin: auto;}
+
+  .hero-content p,
+  .hero-content h1 {
+      font-size: 15px; /* Smaller font size for mobile */
+      text-align: center; /* Optional: Center-align text for smaller screens */
+  }
+}
