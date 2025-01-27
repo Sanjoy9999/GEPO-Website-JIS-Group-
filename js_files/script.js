@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // adding favicon for all page
   const link = document.createElement("link");
@@ -24,7 +25,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", animateOnScroll);
   animateOnScroll(); // Initial check on page load
+
+  // Add floating button
+  renderFloatingButton();
 });
+
+function renderFloatingButton() {
+  const floatingButtonsContainer = document.createElement("div");
+  floatingButtonsContainer.classList.add("floating-buttons");
+
+  // Create WhatsApp button
+  const whatsappButton = document.createElement("a");
+  whatsappButton.href = "https://wa.me/123456789";
+  whatsappButton.classList.add("floating-button");
+
+  const whatsappIcon = document.createElement("i");
+  whatsappIcon.classList.add("fab", "fa-whatsapp");
+
+  // Append WhatsApp icon to the button
+  whatsappButton.appendChild(whatsappIcon);
+
+  // Create Phone button
+  const phoneButton = document.createElement("a");
+  phoneButton.href = "tel:123456789";
+  phoneButton.classList.add("floating-button");
+
+  const phoneIcon = document.createElement("i");
+  phoneIcon.classList.add("fas", "fa-phone");
+
+  // Append Phone icon to the button
+  phoneButton.appendChild(phoneIcon);
+
+  // Append buttons to the container
+  floatingButtonsContainer.appendChild(whatsappButton);
+  floatingButtonsContainer.appendChild(phoneButton);
+
+  // Append the container to the body (or any other parent element)
+  document.body.appendChild(floatingButtonsContainer);
+}
 
 // JavaScript for Carousel
 if (location.pathname.includes("index.html")) {
@@ -52,3 +90,4 @@ if (location.pathname.includes("index.html")) {
     showImage(currentIndex);
   }, 3000); // Change interval to 2 seconds
 }
+

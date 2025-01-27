@@ -2,9 +2,20 @@
   width: 85%;
 }
 
-/* #success-story .container {
-  width: 90%;
-} */
+.section-title {
+  position: relative;
+  text-align: start;
+  font-size: 25px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin-block: 12px;
+}
 
 #map {
   width: 100%;
