@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GEPO - Admin Partnerships</title>
+    <title>GEPO - Admin Programs</title>
     <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="stylesheet" href="../css_files/admin-styles.css" />
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
@@ -21,14 +21,14 @@
       </div>
       <nav id="navBar">
         <div class="logo">
-          <a href="../index.html" class="active"
+          <a href="../index.html"
             ><img src="../assets/images/logo.png" alt="JIS Logo"
           /></a>
         </div>
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li>
-            <a href="../html_files/about.html" class="active">About Us</a>
+            <a href="../html_files/about.html">About Us</a>
           </li>
           <li>
             <a href="../html_files/partnerships.html">Global Partnerships</a>
@@ -42,7 +42,7 @@
           <li><a href="../html_files/events.html">Events & News</a></li>
           <li><a href="../html_files/contact.html">Contact Us</a></li>
           <li><a href="../html_files/login.html">Login</a></li>
-          <li><a href="./admin.html">Admin</a></li>
+          <li><a href="./admin.html" class="active">Admin</a></li>
         </ul>
       </nav>
     </header>
@@ -52,12 +52,12 @@
         <h2>Admin Portal</h2>
         <ul>
           <li>
-            <a href="./admin.html"
+            <a href="./admin.html" 
               ><i class="fas fa-tachometer-alt"></i> Dashboard</a
             >
           </li>
           <li>
-            <a href="./admin-partnerships.html" class="active"
+            <a href="./admin-partnerships.html"
               ><i class="fas fa-handshake"></i> Partnerships</a
             >
           </li>
@@ -82,7 +82,7 @@
             >
           </li>
           <li>
-            <a href="./admin-settings.html"
+            <a href="./admin-settings.html" class="active"
               ><i class="fas fa-cog"></i> Settings</a
             >
           </li>
@@ -90,13 +90,11 @@
       </aside>
       <main class="admin-content">
         <div class="admin-header">
-          <h1>Partnerships Management</h1>
-          <button class="cta-button" id="addPartnershipBtn">
-            Add New Partnership
-          </button>
+          <h1>Settings</h1>
+          <button class="cta-button" id="addProgramBtn">Add New Program</button>
         </div>
-        <div class="partnerships-list">
-          <!-- List of partnerships will be dynamically added here -->
+        <div class="programs-list">
+          <!-- List of programs will be dynamically added here -->
         </div>
       </main>
     </div>
@@ -149,7 +147,7 @@
       </div>
     </footer>
 
-    <script src="../js_files/admin-partnerships.js"></script>
+    <script src="../js_files/admin-programs.js"></script>
     <script src="../js_files/script.js"></script>
   </body>
 </html>
