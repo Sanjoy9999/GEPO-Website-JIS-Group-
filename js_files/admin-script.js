@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // Simulating data loading
   // fetch Data from database
@@ -56,4 +57,5 @@ document.addEventListener("DOMContentLoaded", () => {
       "Generating comprehensive report... This feature would typically create a detailed PDF or Excel report of all activities, partnerships, and program statistics."
     );
   });
+
 });

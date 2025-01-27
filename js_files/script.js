@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // adding favicon for all page
   const link = document.createElement("link");
@@ -89,3 +90,4 @@ if (location.pathname.includes("index.html")) {
     showImage(currentIndex);
   }, 3000); // Change interval to 2 seconds
 }
+
