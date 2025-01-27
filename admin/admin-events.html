@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GEPO - Admin Programs</title>
   <link rel="stylesheet" href="../css_files/styles.css" />
   <link rel="stylesheet" href="../css_files/admin-styles.css" />
-  <link rel="stylesheet" href="/css_files/programs.css">
+  <link rel="stylesheet" href="/css_files/events.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
@@ -16,14 +17,14 @@
     <div class="hamburger-section">
       <div class="logo">
         <a href="#">
-          <img src="../assets/images/logo.png" alt="JIS Logo" loading="lazy" />
+          <img src="/assets/images/logo.png" alt="JIS Logo" loading="lazy" />
         </a>
       </div>
-      <img class="hamburger" src="../assets/images/svgs/hamburger.svg" alt="hamburger">
+      <img class="hamburger" src="/assets/images/svgs/hamburger.svg" alt="hamburger">
     </div>
     <nav id="navBar">
       <div class="logo">
-        <a href="../index.html"><img src="../assets/images/logo.png" alt="JIS Logo" /></a>
+        <a href="../index.html" class="active"><img src="../assets/images/logo.png" alt="JIS Logo" /></a>
       </div>
       <ul>
         <li><a href="../index.html">Home</a></li>
@@ -42,7 +43,7 @@
         <li><a href="../html_files/events.html">Events & News</a></li>
         <li><a href="../html_files/contact.html">Contact Us</a></li>
         <li><a href="../html_files/login.html">Login</a></li>
-        <li><a href="./admin.html" class="active">Admin</a></li>
+        <li><a href="./admin.html">Admin</a></li>
       </ul>
     </nav>
   </header>
@@ -58,10 +59,10 @@
           <a href="./admin-partnerships.html"><i class="fas fa-handshake"></i> Partnerships</a>
         </li>
         <li>
-          <a href="./admin-programs.html" class="active"><i class="fas fa-graduation-cap"></i> Programs</a>
+          <a href="./admin-programs.html"><i class="fas fa-graduation-cap"></i> Programs</a>
         </li>
         <li>
-          <a href="./admin-events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+          <a href="./admin-events.html" class="active"><i class="fas fa-calendar-alt"></i> Events</a>
         </li>
         <li>
           <a href="./admin-applications.html"><i class="fas fa-file-alt"></i> Applications</a>
@@ -76,75 +77,77 @@
     </aside>
     <main class="admin-content">
       <div class="admin-header">
-        <h1>Programs Management</h1>
-        <button class="cta-button" id="addProgramBtn">Add New Program</button>
+        <h1>Event Management</h1>
+        <button class="cta-button" id="addeventBtn">Add New Event</button>
       </div>
-      <div class="programs-list ">
-        <div class="program-card animate-on-scroll" id="program-card1">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
+      <div class="events-list">
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200" alt="Event Image">
           </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
+          <div class="event-content">
+            <div class="event-name">Exciting Event</div>
+            <div class="event-details event-time">Time: 6:00 PM</div>
+            <div class="event-details event-date">Date: 27th January 2025</div>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200" alt="Event Image">
+          </div>
+          <div class="event-content">
+            <div class="event-name">Exciting Event</div>
+            <div class="event-details event-time">Time: 6:00 PM</div>
+            <div class="event-details event-date">Date: 27th January 2025</div>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200" alt="Event Image">
+          </div>
+          <div class="event-content">
+            <div class="event-name">Exciting Event</div>
+            <div class="event-details event-time">Time: 6:00 PM</div>
+            <div class="event-details event-date">Date: 27th January 2025</div>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200" alt="Event Image">
+          </div>
+          <div class="event-content">
+            <div class="event-name">Exciting Event</div>
+            <div class="event-details event-time">Time: 6:00 PM</div>
+            <div class="event-details event-date">Date: 27th January 2025</div>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200" alt="Event Image">
+          </div>
+          <div class="event-content">
+            <div class="event-name">Exciting Event</div>
+            <div class="event-details event-time">Time: 6:00 PM</div>
+            <div class="event-details event-date">Date: 27th January 2025</div>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-image">
+            <img src="https://via.placeholder.com/300x200" alt="Event Image">
+          </div>
+          <div class="event-content">
+            <div class="event-name">Exciting Event</div>
+            <div class="event-details event-time">Time: 6:00 PM</div>
+            <div class="event-details event-date">Date: 27th January 2025</div>
           </div>
         </div>
 
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
       </div>
     </main>
   </div>
@@ -200,4 +203,5 @@
   <script src="../js_files/admin-programs.js"></script>
   <script src="../js_files/script.js"></script>
 </body>
+
 </html>

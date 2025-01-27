@@ -36,7 +36,9 @@ header {
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  width: 100%;
+
+  z-index: 11;
 }
 
 nav {
@@ -44,19 +46,57 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding-inline: 2rem 0.5rem;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
 }
 
 
 /* Logo Styling */
 nav .logo {
-  flex-shrink: 0; /* Prevents the logo from shrinking */
+  flex-shrink: 0;
 }
 
 nav .logo img {
-  max-height: 80px; /* Adjust for desired logo size */
-  width: auto; /* Maintains aspect ratio */
-  background-color: #fff; /* Fallback color */
-  border-radius: 10px; /* Makes the logo round */
+  max-height: 80px;
+  width: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hamburger-section {
+  display: flex;
+  position: fixed;
+  top: -200px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  background-color: var(--primary-color);
+  padding: 20px;
+  visibility: hidden;
+  z-index: 14;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger-section .logo img {
+  max-height: 100px;
+  /* Adjust for desired logo size */
+  width: auto;
+  /* Maintains aspect ratio */
+  background-color: #fff;
+  /* Fallback color */
+  border-radius: 10px;
+  padding: 10px;
+  /* Makes the logo round */
+}
+
+.hamburger {
+  height: 40px;
+  width: 40px;
+  transition: all 0.5s ease-in-out;
+
+  visibility: hidden;
 }
 
 nav ul {
@@ -68,8 +108,8 @@ nav ul li {
   padding: 0 1rem;
 }
 
-nav ul li a {
-  color: blue;
+nav ul li > a {
+  color: black;
   text-decoration: none;
   transition: color 0.3s ease;
   background-color: #fff;
@@ -87,56 +127,10 @@ nav ul li a.active {
   color: #fff;
 }
 
-/* Carousel Styling */
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 600px;
-  overflow: hidden;
-}
-
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.carousel img.active {
-  opacity: 1;
-}
-
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.carousel-controls button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.carousel-controls button:hover {
-  background-color: black;
-}
-
 /* Hero Section Styles */
 .hero {
   width: 100%;
-  /* height: 100%; */
-  height: inherit;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,6 +174,7 @@ nav ul li a.active {
 
 /* Section Styles */
 .section {
+  margin-top: 5rem;
   padding: 4rem 0;
 }
 
@@ -205,6 +200,17 @@ nav ul li a.active {
   margin-bottom: 2rem;
   width: calc(33.333% - 2rem);
   transition: transform 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card img {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+}
+.quick-links-btn {
+  width: fit-content;
 }
 
 .card:hover {
@@ -332,9 +338,9 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  nav {
+  /* nav {
     flex-direction: column;
-  }
+  } */
 
   nav ul {
     margin-top: 1rem;
@@ -349,3 +355,97 @@ footer {
   }
 }
 
+@media (max-width: 1283px) {
+  nav ul {
+    font-size: small;
+  }
+}
+
+@media (max-width: 1134px) {
+  .hamburger-section {
+    visibility: visible;
+    top: 0;
+  }
+
+  .hamburger {
+    visibility: visible;
+  }
+
+  header {
+    width: 100vw;
+    position: absolute;
+    /* right: 0px; */
+    height: 200%;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  nav {
+    flex-direction: column;
+    /* height: auto; */
+    width: 100vw;
+    display: flex;
+    position: absolute;
+    left: 100%;
+    z-index: 13;
+    /* background-color: #0c5eb0a1; */
+  }
+
+  nav ul {
+    margin-top: 100px;
+    flex-direction: column;
+    /* gap: 20px; */
+
+    width: 100vw;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    border: 2px solid navy;
+  }
+
+  nav .logo img {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 910px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: normal;
+  }
+  .cta-button {
+    margin: 5px;
+  }
+  .section {
+    margin-top: 5rem;
+    /* padding: 4rem 0; */
+  }
+  .cta-button {
+    padding: 0.4rem 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .cta-button {
+    padding: 0.5rem 1.5rem;
+  }
+}
+@media (max-width: 376px) {
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .cta-button {
+    padding: 0.2rem 0.8rem;
+  }
+}

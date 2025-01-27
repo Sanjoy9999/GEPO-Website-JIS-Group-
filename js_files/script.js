@@ -64,30 +64,20 @@ function renderFloatingButton() {
   document.body.appendChild(floatingButtonsContainer);
 }
 
-// JavaScript for Carousel
-if (location.pathname.includes("index.html")) {
-  const images = document.querySelectorAll(".carousel img");
-  let currentIndex = 0;
+// hamburger section
+let hamburger = document.querySelector(".hamburger");
+let navBar = document.querySelector("#navBar");
+console.log(hamburger);
+let menuOpen = false;
 
-  function showImage(index) {
-    images.forEach((img, i) => {
-      img.classList.toggle("active", i === index);
-    });
+hamburger.addEventListener("click", (e) => {
+  console.log("Hamburger clicked");
+  if (!menuOpen) {
+    navBar.style.left = "0"; // Show the menu
+    e.target.style.transform = "rotate(180deg)";
+  } else {
+    navBar.style.left = "100%"; // Hide the menu
+    e.target.style.transform = "rotate(-180deg)";
   }
-
-  document.getElementById("prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  });
-
-  document.getElementById("next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  });
-
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }, 3000); // Change interval to 2 seconds
-}
-
+  menuOpen = !menuOpen;
+});

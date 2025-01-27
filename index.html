@@ -6,15 +6,29 @@
     <title>GEPO - Home</title>
 
     <link rel="stylesheet" href="./css_files/styles.css" />
+    <link rel="stylesheet" href="./css_files/home.css" />
     <link rel="shortcut icon" href="./assets/images/favicon.ico" />
     <script
       src="https://kit.fontawesome.com/4bd740a6dc.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <header>
-      <nav>
+      <div class="hamburger-section">
+        <div class="logo">
+          <a href="#">
+            <img src="./assets/images/logo.png" alt="JIS Logo" loading="lazy" />
+          </a>
+        </div>
+        <img
+          class="hamburger"
+          src="assets/images/svgs/hamburger.svg"
+          alt="hamburger"
+        />
+      </div>
+      <nav id="navBar">
         <div class="logo">
           <a href="#">
             <img src="./assets/images/logo.png" alt="JIS Logo" loading="lazy" />
@@ -32,7 +46,9 @@
           <li><a href="./html_files/resources.html">Resources & Support</a></li>
           <li><a href="./html_files/events.html">Events & News</a></li>
           <li><a href="./html_files/contact.html">Contact Us</a></li>
-          <li><a href="./html_files/login.html">Login</a></li>
+          <li style="position: relative">
+            <a href="./html_files/login.html">Login</a>
+          </li>
           <li><a href="./admin/admin.html">Admin</a></li>
         </ul>
       </nav>
@@ -88,30 +104,50 @@
           <h2 class="section-title">Quick Links</h2>
           <div class="card-container">
             <div class="card animate-on-scroll">
+              <img
+                src="./assets/quick-links-images/httpssanity.keg.commasterstudies.jpg"
+                alt="stydy abroad"
+              />
               <h3>Study Abroad Programs</h3>
               <p>
                 Explore opportunities to study at our partner universities
                 worldwide.
               </p>
-              <a href="./html_files/programs.html" class="cta-button"
+              <a
+                href="./html_files/programs.html"
+                class="cta-button quick-links-btn"
                 >Learn More</a
               >
             </div>
             <div class="card animate-on-scroll">
+              <img
+                src="./assets/quick-links-images/article-hero-image-14160.jpg"
+                alt="stydy abroad"
+              />
+
               <h3>International Admissions</h3>
               <p>Join our diverse community of international students.</p>
-              <a href="./html_files/contact.html" class="cta-button"
+              <a
+                href="./html_files/contact.html"
+                class="cta-button quick-links-btn"
                 >Apply Now</a
               >
 
             </div>
             <div class="card animate-on-scroll">
+              <img
+                src="./assets/quick-links-images/Untitled_design_44_m59nca.jpg"
+                alt="stydy abroad"
+              />
+
               <h3>Faculty Exchange Programs</h3>
               <p>
                 Enhance your teaching and research through international
                 collaborations.
               </p>
-              <a href="./html_files/partnerships.html" class="cta-button"
+              <a
+                href="./html_files/partnerships.html"
+                class="cta-button quick-links-btn"
                 >Explore Options</a
               >
             </div>
@@ -125,29 +161,45 @@
           <h2 class="section-title">Latest News</h2>
           <div class="card-container">
             <div class="card animate-on-scroll">
+              <img
+                src="./assets/latest-news-images/partnership1.jpg"
+                alt="stydy abroad"
+              />
               <h3>New Partnership Announced</h3>
               <p>
                 JIS partners with University of XYZ for groundbreaking research
                 collaboration.
               </p>
-              <a href="./html_files/events.html" class="cta-button"
+              <a
+                href="./html_files/events.html"
+                class="cta-button quick-links-btn"
                 >Read More</a
               >
 
             </div>
             <div class="card animate-on-scroll">
+              <img
+                src="./assets/latest-news-images/Conference-Room-Technology-Trend.jpg"
+                alt="stydy abroad"
+              />
               <h3>Upcoming International Conference</h3>
               <p>Join us for the Annual Global Education Summit this fall.</p>
-              <a href="./html_files/login.html?type=register" class="cta-button"
+              <a
+                href="./html_files/login.html?type=register"
+                class="cta-button quick-links-btn"
                 >Register Now</a
               >
             </div>
             <div class="card animate-on-scroll">
+              <img
+                src="./assets/latest-news-images/brand-success-story.jpg"
+                alt="stydy abroad"
+              />
               <h3>Student Success Story</h3>
               <p>JIS exchange student wins prestigious international award.</p>
               <a
                 href="./html_files/partnerships.html#sucess-story"
-                class="cta-button"
+                class="cta-button quick-links-btn"
                 >Read More</a
               >
             </div>
@@ -191,20 +243,31 @@
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/jisgroupindia" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/jisgroup/?originalSubdomain=in"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/JISGroupEducationalInitiatives/"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>
-          &copy; 2023 Global Engagement & Partnerships Office. All rights
+          &copy; 2025 Global Engagement & Partnerships Office. All rights
           reserved.
         </p>
       </div>
     </footer>
 
     <script src="./js_files/script.js" defer></script>
+    <script src="./js_files/home.js"></script>
   </body>
 </html>
