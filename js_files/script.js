@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // adding favicon for all page
   const link = document.createElement("link");
   link.rel = "shortcut icon";
-  link.href = `${location.pathname.includes("index.html") ? "." : ".."
-    }/assets/images/logo.png`;
+  link.href = `${
+    location.pathname.includes("index.html") ? "." : ".."
+  }/assets/images/logo.png`;
   link.type = "image/x-icon";
   document.head.appendChild(link);
 
@@ -25,41 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll(); // Initial check on page load
 });
 
-// JavaScript for Carousel
-if (location.pathname.includes("index.html")) {
-  const images = document.querySelectorAll(".carousel img");
-  let currentIndex = 0;
-
-  function showImage(index) {
-    images.forEach((img, i) => {
-      img.classList.toggle("active", i === index);
-    });
-  }
-
-  document.getElementById("prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  });
-
-  document.getElementById("next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  });
-
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }, 3000); // Change interval to 2 seconds
-}
-
-
 // hamburger section
 let hamburger = document.querySelector(".hamburger");
-let navBar = document.querySelector("#navBar")
-console.log(hamburger)
+let navBar = document.querySelector("#navBar");
+console.log(hamburger);
 let menuOpen = false;
 
-hamburger.addEventListener('click', (e) => {
+hamburger.addEventListener("click", (e) => {
   console.log("Hamburger clicked");
   if (!menuOpen) {
     navBar.style.left = "0"; // Show the menu
@@ -70,4 +43,3 @@ hamburger.addEventListener('click', (e) => {
   }
   menuOpen = !menuOpen;
 });
-
