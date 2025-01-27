@@ -17,3 +17,20 @@ const details = [
 ];
 
 initializeDetails(details);
+
+function showSection(sectionId) {
+  // Hide all sections
+  document.querySelectorAll('.section-content').forEach((section) => {
+    section.classList.remove('active');
+  });
+
+  // Remove active class from all buttons
+  document.querySelectorAll('.tab').forEach((tab) => {
+    tab.classList.remove('active');
+  });
+
+  // Show the selected section and highlight the button
+  document.getElementById(sectionId).classList.add('active');
+  document.querySelector(`button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+}
+
