@@ -1,4 +1,5 @@
 /* Global Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -48,6 +49,7 @@ nav {
   transition: all 0.5s ease-in-out;
   width: 100%;
 }
+
 
 /* Logo Styling */
 nav .logo {
@@ -134,7 +136,7 @@ nav ul li a.active {
   justify-content: center;
   text-align: center;
   color: #fff;
-  position: relative;
+  /* position: relative; */
 }
 
 .hero-content {
@@ -143,7 +145,7 @@ nav ul li a.active {
   width: 100%;
   padding: 2rem;
   padding-top: 7rem;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .hero h1 {
@@ -291,6 +293,47 @@ footer {
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999;
+}
+
+.floating-buttons a {
+  text-decoration: none;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.floating-buttons a:last-child i {
+  color: #003366;
+}
+.floating-buttons a:last-child {
+  background-color: #fff;
+}
+
+.floating-buttons a:first-child i {
+  color: #54ef54;
+  font-size: 24px;
+}
+
+.floating-buttons a:hover {
+  background-color: var(--secondary-color);
 }
 
 /* Responsive Design */

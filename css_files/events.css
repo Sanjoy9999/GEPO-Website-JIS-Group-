@@ -1,44 +1,357 @@
-.events-list{
+/* Hero section*/
+
+#events-hero{
+    background: url(../assets/images/events/event-news-home.jpg) no-repeat center center;
+    height: 80vh;
+   width: 100%;
+   background-size: cover;
+}
+
+#events-hero .hero-content {
+    position: static;
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    
-}
-.event-card {
-    background-color: white;
-    color: navy;
-    width: 300px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-inline: 15%;
+    color: #ffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 0;
+  }
+
+  #events-hero .hero-content h1,
+#events-hero .hero-content p {
+  width: 100%;
+  text-align: center;
 }
 
-.event-card:hover {
-    transform: scale(1.05);
+#events-hero .hero-content h1 {
+  font-size: 3rem;
+}
+#events-hero .hero-content p {
+  font-size: 1.1rem;
 }
 
-.event-image img {
+/* calender section */
+body {
+    font-family: "Arial", sans-serif;
+  }
+  
+  .fc-header-toolbar {
+    background-color: #4f46e5;
+    padding: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  .fc-toolbar-title {
+    color: white !important;
+    font-size: 1.5rem !important;
+  }
+  
+  .fc-button-primary {
+    background-color: #6366f1 !important;
+    border-color: #6366f1 !important;
+  }
+  
+  .fc-button-primary:hover {
+    background-color: #4f46e5 !important;
+    border-color: #4f46e5 !important;
+  }
+  
+  .fc-daygrid-day-number {
+    color: #4b5563;
+    font-weight: bold;
+  }
+  
+  .fc-day-today {
+    background-color: #e0f2fe !important;
+  }
+  
+  .fc-day-has-event {
+    background-color: #ddd6fe !important;
+  }
+  
+  .fc-event {
+    border-radius: 4px;
+    font-size: 0.875rem;
+    padding: 2px 4px;
+  }
+  
+  .fc-event-time {
+    font-weight: bold;
+  }
+  
+  .conference {
+    background-color: #34d399 !important;
+    border-color: #34d399 !important;
+    color: #ffffff !important;
+  }
+  
+  .webinar {
+    background-color: #60a5fa !important;
+    border-color: #60a5fa !important;
+    color: #ffffff !important;
+  }
+  
+  .other {
+    background-color: #f472b6 !important;
+    border-color: #f472b6 !important;
+    color: #ffffff !important;
+  }
+  
+  #calendar {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+/* card section */
+  .card{
+    max-width: 50%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    width: calc(33.333% - 2rem);
+    transition: transform 1s ease;
+
+  }
+  
+.card-container img{
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 30vh;
+    border-radius: 0.5rem;
+}  
+
+/* card animate-on-scroll hover zoom */ 
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+    }
+
+
+/* Photo and Video Gallery */
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  justify-content: center;
+  margin-bottom: -106px;
 }
 
-.event-content {
-    padding: 16px;
+.gallery-container .image-card {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px; /* Adds spacing around cards */
 }
 
-.event-name {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-    color: orange;
+.gallery-container .image-card img {
+  width: 100%;
+  height: 40vh;
+  border-radius: 0.5rem;
+  object-fit: cover; /* Ensures the image fits properly */
 }
 
-.event-details {
-    font-size: 1rem;
-    margin-bottom: 4px;
+
+/* Video Gallery */
+.video-card-container {
+  width: 100%;
+  margin: 45px;
+  margin-top: 100px;
 }
 
-.event-time, .event-date {
-    color: lightgray;
+.gallery-container .video-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 120px;
+  gap: 16px;
+}
+
+.video-card-container .video-card {
+  flex: 0 1 calc(33.333% - 16px); /* 3 items per row on large screens */
+  max-width: calc(33.333% - 16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-card iframe {
+  width: 90%;
+  height: 40vh;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .video-card-container .video-card {
+    flex: 0 1 100%; /* 1 item per row on mobile */
+    max-width: 100%;
+  }
+
+  .video-card iframe {
+    height: 30vh; /* Adjust the height for mobile screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .video-card-container .video-card {
+    flex: 0 1 100%; /* 1 item per row on tablets */
+    max-width: 50%;
+  }
+
+  .video-card iframe {
+    height: 35vh; /* Adjust the height for tablet screens */
+  }
+}
+
+@media (min-width: 1025px) {
+  .video-card-container .video-card {
+    flex: 0 1 calc(33.333% - 16px); /* 3 items per row on larger screens */
+    max-width: calc(33.333% - 16px);
+  }
+
+  .video-card iframe {
+    height: 40vh; /* Default height for large screens */
+  }
+}
+
+
+/* social media feed */
+/* General Styles for Social Cards */
+.social-feed-container {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;  /* Allow the cards to wrap into new rows */
+  gap: 20px;  /* Adds space between the cards */
+  justify-content: center; /* Center the cards */
+}
+
+.social-card {
+  background-color: #f9f9f9;  /* Card background */
+  box-shadow: 0 4px 8px rgba(14, 13, 13, 0.1);
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+
+.social-header img {
+  max-width: 50px;  /* Limit the size of the logo */
+  margin-bottom: 10px;
+}
+
+.social-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.social-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#linkedin-post, #facebook-post, #twitter-post {
+  width: 100%;
+  height: 150px;
+}
+
+.social-card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+
+/* Tablet and Mobile Styles */
+@media (max-width: 1024px) {
+  .social-card {
+    width: 100%;  /* 1 card per row on tablets */
+    max-width: 100%;  /* Ensures the card takes full width */
+  }
+
+  .social-header h3 {
+    font-size: 1rem;  /* Adjust font size for smaller screens */
+  }
+
+  #linkedin-post, #facebook-post, #twitter-post {
+    height: 120px;  /* Adjust post height for smaller screens */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .social-feed-container {
+    justify-content: space-between;  /* Space out cards on larger screens */
+  }
+
+  .social-card {
+    flex: 0 1 calc(33.333% - 20px);  /* 3 cards per row on larger screens */
+    max-width: calc(33.333% - 20px);
+  }
+
+  #linkedin-post, #facebook-post, #twitter-post {
+    height: 150px;  /* Default post height for larger screens */
+  }
+}
+
+
+/* For smaller devices like mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card {
+        width: 50vh;
+        margin-bottom: 1rem;
+    }
+}
+
+/* For medium devices like tablets (up to 768px) */
+@media screen and (max-width: 768px) {
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 60vh;
+        margin-bottom: 1rem;
+    }
+}
+
+/*  photos and gallery images */
+
+@media screen and (mix-width: 950px) {
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100vh;
+        height:  100vh;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+  .gallery-container .image-card {
+    flex: 0 1 calc(50% - 16px); /* Two items per row */
+    max-width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container .image-card {
+    flex: 0 1 100%; /* One item per row */
+    max-width: 100%;
+  }
 }

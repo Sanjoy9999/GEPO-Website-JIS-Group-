@@ -1,18 +1,22 @@
-/* 
-<div id="details-container">
-  <div class="details-box animate-on-scroll">
-    <div class="details-summary">
-      <h5>Summary of the content.</h5>
-      <span>+</span>
-    </div>
-    <div class="details-content">
-      <p>
-        Content here
-      </p>
-    </div>
-  </div>
-</div>
-*/
+/**
+ * Initializes the details for the application.
+ *
+ * @param {Array<Object>} details - An array of objects representing details to initialize.
+ * @param {string} details[].summary - A brief summary of the guideline or topic.
+ * @param {string} details[].content - Detailed description or content of the guideline.
+ *
+ * @example
+ * initializeDetails([
+ *   {
+ *     summary: "Identify potential partner institutions aligned with our strategic goals.",
+ *     content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+ *   },
+ *   {
+ *     summary: "Develop a detailed proposal outlining the scope of the partnership.",
+ *     content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+ *   },
+ * ]);
+ */
 
 function initializeDetails(details = []) {
   const container = document.getElementById("details-container");
