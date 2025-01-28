@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   // adding favicon for all page
   const link = document.createElement("link");
@@ -67,17 +66,33 @@ function renderFloatingButton() {
 // hamburger section
 let hamburger = document.querySelector(".hamburger");
 let navBar = document.querySelector("#navBar");
-console.log(hamburger);
-let menuOpen = false;
 
 hamburger.addEventListener("click", (e) => {
-  console.log("Hamburger clicked");
-  if (!menuOpen) {
-    navBar.style.left = "0"; // Show the menu
+  let menuClosed = navBar.className.includes("close");
+  if (menuClosed) {
+    const menuHeight = navBar.querySelector("ul").scrollHeight + 10;
+    console.log(menuHeight);
+    navBar.classList.remove("close"); // Change the class to open;
+
+    navBar.style.height = `${menuHeight}px`; // Show the menu
     e.target.style.transform = "rotate(180deg)";
   } else {
-    navBar.style.left = "100%"; // Hide the menu
+    navBar.classList.add("close");
+    navBar.style.height = "0"; // Hide the menu
     e.target.style.transform = "rotate(-180deg)";
   }
-  menuOpen = !menuOpen;
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1134) {
+    navBar.style.height = "0";
+    navBar.classList.add("close");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 1134) {
+    navBar.style.height = "0";
+    navBar.classList.add("close");
+  }
 });
