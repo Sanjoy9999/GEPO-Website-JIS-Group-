@@ -6,7 +6,10 @@
     <title>GEPO - Admin Programs</title>
     <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="stylesheet" href="../css_files/admin-styles.css" />
+    <link rel="stylesheet" href="../css_files/admin-applications.css" />
+
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
   </head>
   <body>
@@ -90,12 +93,43 @@
       </aside>
       <main class="admin-content">
         <div class="admin-header">
-          <h1>Programs Management</h1>
-          <button class="cta-button" id="addProgramBtn">Add New Program</button>
+          <h1>Applications Management</h1>
+          <button class="cta-button" id="addProgramBtn">Add New application</button>
         </div>
-        <div class="programs-list">
-          <!-- List of programs will be dynamically added here -->
-        </div>
+
+
+        <div class="applications-list">
+          <div class="application-item">
+              <div class="application-details">
+                  <strong>John Doe</strong> - Summer Exchange Program
+              </div>
+              <div class="application-actions">
+                  <button class="approve-btn">Approve</button>
+                  <button class="reject-btn">Reject</button>
+              </div>
+          </div>
+          <div class="application-item">
+              <div class="application-details">
+                  <strong>Jane Smith</strong> - Global Leadership Workshop
+              </div>
+              <div class="application-actions">
+                  <button class="approve-btn">Approve</button>
+                  <button class="reject-btn">Reject</button>
+              </div>
+          </div>
+          <div class="application-item">
+              <div class="application-details">
+                  <strong>Mike Johnson</strong> - International Research Symposium
+              </div>
+              <div class="application-actions">
+                  <button class="approve-btn">Approve</button>
+                  <button class="reject-btn">Reject</button>
+              </div>
+          </div>
+      </div>
+
+
+
       </main>
     </div>
 
@@ -148,6 +182,8 @@
     </footer>
 
     <script src="../js_files/admin-programs.js"></script>
+    <script src="../js_files/admin-applications.js"></script>
     <script src="../js_files/script.js"></script>
+
   </body>
 </html>
