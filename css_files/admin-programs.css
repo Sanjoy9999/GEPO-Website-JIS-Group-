@@ -1,9 +1,8 @@
-
 .programs-list-0 {
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 10px;
+  padding-top: 0;
   padding-bottom: 10px;
  }
  .program-item {
@@ -17,9 +16,9 @@
    margin-top: 10px;
 }
 
+
 .program-info{
    font-size: 1.2rem;
-   color: aliceblue;
 }
 .program-item:last-child {
    border-bottom: none;
@@ -47,4 +46,28 @@
 }
 .delete-btn:hover {
    background-color: #c82333;
+}
+
+@media (max-width: 720px) {
+  .programs-list-0 {
+    padding: 1rem;
+  }
+  .program-item {
+    padding: 0.5rem;
+  }
+  .program-info{
+   font-size: 0.8rem;
+}
+}
+
+@media (max-width: 480px) {
+  .programs-list-0 {
+    padding: 0.5rem;
+  }
+  .program-item {
+    padding: 0.25rem;
+  }
+   .program-info{
+    font-size: 0.5rem;
+   }
 }

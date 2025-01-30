@@ -4,20 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 2, name: 'ABC Institute of Technology', country: 'Germany', type: 'Research Collaboration', status: 'Pending' },
         { id: 3, name: 'Global Education Network', country: 'Multiple', type: 'Joint Program', status: 'Active' },
     ];
-
     const partnershipsList = document.querySelector('.partnerships-list');
 
     function renderPartnerships() {
         partnershipsList.innerHTML = '';
         partnerships.forEach(partnership => {
             const partnershipElement = document.createElement('div');
+   
+            partnershipElement.classList.add('partnership-list');
+                    //change partnership-list background color
+            partnershipElement.style.backgroundColor = 'skyblue';
+           
             partnershipElement.classList.add('partnership-item');
+            partnershipElement.style.border = '1px solid #ccc';
+            partnershipElement.style.padding = '10px';
+            partnershipElement.style.margin = '10px 0';
+            partnershipElement.style.backgroundColor = '#f9f9f9';
+            partnershipElement.style.boxShadow = '0 4px 8px 0 rgba(0,0,0,0.2)';
             partnershipElement.innerHTML = `
-                <h3>${partnership.name}</h3>
-                <p>Country: ${partnership.country}</p>
-                <p>Type: ${partnership.type}</p>
-                <p>Status: ${partnership.status}</p>
-                <button class="edit-btn" data-id="${partnership.id}">Edit</button>
+                <h3 style="color: #333;">${partnership.name}</h3>
+                <p style="color: #666;">Country: ${partnership.country}</p>
+                <p style="color: #666;">Type: ${partnership.type}</p>
+                <p style="color: ${partnership.status === 'Active' ? 'green' : 'orange'};">Status: ${partnership.status}</p>
+                <button class="edit-btn" data-id="${partnership.id}" style="margin-right: 5px;">Edit</button>
                 <button class="delete-btn" data-id="${partnership.id}">Delete</button>
             `;
             partnershipsList.appendChild(partnershipElement);

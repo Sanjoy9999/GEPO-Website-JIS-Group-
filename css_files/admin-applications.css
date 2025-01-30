@@ -1,16 +1,13 @@
 
-.applications-list {
- background-color: rgb(85, 151, 172);
- border-radius: 10px;
- padding: 1.5rem;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.application-item {
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding: 1rem;
- border-bottom: 1px solid #e0e0e0;
+.applications-list .application-item{
+  background-color: rgb(134, 153, 207);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 7px;
+  margin-top: 10px;
 }
 .application-details {
  font-size: 1.2rem;
@@ -39,4 +36,22 @@
 }
 .reject-btn:hover {
  background-color: #c82333;
+}
+
+@media (max-width: 720px) {
+  .applications-list {
+    padding: 1rem;
+  }
+  .application-item {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .applications-list {
+    padding: 0.5rem;
+  }
+  .application-item {
+    padding: 0.25rem;
+  }
 }

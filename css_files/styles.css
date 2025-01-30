@@ -43,6 +43,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 11;
+  border-bottom: 1px solid rgb(32, 147, 155);
+
 }
 
 nav {
@@ -51,6 +53,7 @@ nav {
   align-items: center;
   transition: height 0.5s ease-in-out;
   width: 100%;
+  
 }
 
 nav.close {
@@ -124,6 +127,7 @@ nav ul li a.active {
   padding-top: 7rem;
   position: absolute;
 }
+
 
 .hero h1 {
   font-size: 3rem;
@@ -315,9 +319,18 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+
   nav ul {
     margin-top: 1rem;
   }
+
+  .hero-content a{
+    margin-top:70px;
+   }
+   .hero-content  #contactus{
+    margin-top:25px;
+   }
 
   .card {
     width: 100%;
@@ -345,7 +358,7 @@ footer {
     justify-content: center;
     width: 100%;
     display: flex;
-    position: absolute; /* TODO: check this line*/
+    position: absolute; 
     top: 0;
     left: 0;
     height: 0;
@@ -401,6 +414,7 @@ footer {
   .cta-button {
     padding: 0.5rem 1.5rem;
   }
+
 }
 @media (max-width: 376px) {
   .hero h1 {
@@ -413,3 +427,6 @@ footer {
     padding: 0.2rem 0.8rem;
   }
 }
+
+
+

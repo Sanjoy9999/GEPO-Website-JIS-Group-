@@ -1,3 +1,62 @@
+<?php
+// ...existing code...
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    
+    // Check if email exists in the database
+    if (empty($email)) {
+        echo "Please enter an email address.";
+        exit;
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format.";
+        exit;
+    }
+    // Connect to the database
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "your_database_name";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $query = "SELECT * FROM users WHERE email='$email'";
+    $result = mysqli_query($conn, $query);
+    
+    if (mysqli_num_rows($result) > 0) {
+        // Generate a unique token
+        $token = bin2hex(random_bytes(50));
+        
+        // Store the token in the database with an expiration time
+        $query = "UPDATE users SET reset_token='$token', token_expiry=DATE_ADD(NOW(), INTERVAL 1 HOUR) WHERE email='$email'";
+        mysqli_query($conn, $query);
+        
+        // Send reset password email
+        $resetLink = "http://yourwebsite.com/resetpassword.php?token=$token";
+        $subject = "Password Reset Request";
+        $message = "Click the following link to reset your password: $resetLink";
+        $headers = "From: no-reply@yourwebsite.com";
+        
+        mail($email, $subject, $message, $headers);
+        
+        echo "A password reset link has been sent to your email.";
+    } else {
+        echo "No account found with that email.";
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,44 +104,44 @@
       />
     </header>
 
-
-
-
     <main>
       <section class="login-section">
         <div class="login-container">
-          <div class="login-header">
+        <div class="login-header">
             <h2>Welcome to JIS Group</h2>
             <h3 id="login_header">Log in</h3>
           </div>
 
 
-          <form  id="loginForm" class="login-form">
+          <form action="POST" id="loginForm" class="login-form">
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email">Enter Your Email</label>
               <input type="email" id="email" name="email" required />
             </div>
             <div class="form-group">
-              <label for="password">Password</label>
+              <label for="password">Enter Your New Password</label>
               <input type="password" id="password" name="password" required />
             </div>
-            <button type="submit" class="cta-button">Log In</button>
-            <div class="forgot-password">
-              <a href="./forgot_password.html">Forgot Password?</a>
+            <div class="form-group">
+              <label for="password">Enter Confirm Password</label>
+              <input type="password" id="password" name="password" required />
             </div>
+
+
+            
+            <button type="submit" class="cta-button">Log In</button>
+          
           </form>
 
 
           <div class="login-footer">
             <p>
               Don't have an account?
-              <a href="./signup.html" style="color: var(--primary-color); font-weight: bold"
+              <a href="./signup.php" style="color: var(--primary-color); font-weight: bold"
                 >Sign Up</a
               >
             </p>
           </div>
-
-
         </div>
       </section>
     </main>
@@ -113,8 +172,6 @@
             </li>
           </ul>
         </div>
-
-
         <div class="footer-section">
           <h3>Contact Us</h3>
           <p>Global Engagement & Partnerships Office</p>

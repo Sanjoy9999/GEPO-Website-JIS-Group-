@@ -61,7 +61,7 @@
 .admin-content {
   flex-grow: 1;
   padding: 2rem;
-  background-color: #f4f4f4;
+  background-color: #e5e1a6;
 }
 
 .admin-header {
@@ -121,11 +121,15 @@
 .recent-activities h2 {
   margin-bottom: 1rem;
   color: var(--primary-color);
+  text-align: center;
+  text-decoration: underline;
 }
 
 .recent-activities ul {
   list-style-type: none;
   padding: 0;
+  font-size: 19px;
+  font-weight: 600;
 }
 
 .recent-activities li {
@@ -135,4 +139,49 @@
 
 .recent-activities li:last-child {
   border-bottom: none;
+}
+
+@media (max-width: 720px) {
+  .admin-container {
+    margin-left: 0;
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .admin-content {
+    padding: 1rem;
+  }
+  .admin-header h1 {
+    font-size: 1.5rem;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .stat-card h3 {
+    font-size: 1rem;
+  }
+  .stat-card p {
+    font-size: 1.5rem;
+  }
+  .chart-container, .recent-activities {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-header h1 {
+    font-size: 1.2rem;
+  }
+  .stat-card h3 {
+    font-size: 0.8rem;
+  }
+  .stat-card p {
+    font-size: 1.2rem;
+  }
+  .chart-container, .recent-activities {
+    padding: 0.5rem;
+  }
 }
