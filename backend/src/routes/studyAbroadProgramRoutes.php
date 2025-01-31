@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../controllers/StudyAbroadProgramController.php';
+require_once __DIR__ . '/../controllers/studyAbroadProgramController.php';
 
 use Controllers\StudyAbroadProgramController;
 use Middleware\VerifyUser;
