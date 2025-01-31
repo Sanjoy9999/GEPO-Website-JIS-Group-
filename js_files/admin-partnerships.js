@@ -55,3 +55,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// It form is submitted, add a new partnership
+
+const addPartnershipForm = document.getElementById('addPartnershipForm');
+document.getElementById('addPartnershipForm').addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+    const newPartnership = {
+        id: partnerships.length + 1,
+        name: document.getElementById('instituteName').value,
+        country: document.getElementById('countryName').value,
+        type: document.getElementById('partnershipType').value,
+        status: 'Pending' // Default status for new partnerships
+    };
+
+    const fileInput = document.getElementById('partnershipImage');
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+        newPartnership.image = reader.result; // Base64 encoded image
+        partnerships.push(newPartnership);
+        renderPartnerships();
+        document.getElementById('addPartnershipForm').reset();
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        alert('Please upload an image.');
+    }
+});
+
+
+
+
+
