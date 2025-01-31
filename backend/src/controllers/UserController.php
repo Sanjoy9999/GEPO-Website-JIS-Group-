@@ -171,8 +171,9 @@ class UserController
             $stmt->execute([':email' => $newEmail, ':username' => $newUsername, ':name' => $newName, ':id' => $user['id']]);
 
             // Return a success response with the updated user data
-            unset($user['password']); // Remove password from response
-            return Response::success(200, 'User data updated successfully', $user);
+            return Response::success(200, 'User data updated successfully', [
+                'id' => $user['id']
+            ]);
         } else {
             return Response::error(401, 'Incorrect password', ['Incorrect password']);
         }
@@ -195,6 +196,8 @@ class UserController
             $stmt->execute([':id' => $user['id']]);
 
             $pdo->commit();
+
+            setcookie('accessToken', '', time() - 3600, '', '', true, true);
 
             return Response::success(200, 'User data deleted successfully');
         } catch (\Exception $e) {
