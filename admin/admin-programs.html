@@ -76,10 +76,49 @@
     <main class="admin-content">
       <div class="admin-header">
         <h1>Programs Management</h1>
-        <button class="cta-button" id="addProgramBtn">Add New Program</button>
-      </div>
+        
+      </div>  
 
-       
+
+       <!-- Make a form where you can add a new program
+        admin can add a new partnership by filling out the form 
+        In this form admin can upload image upload ,program name, international institute name ,country name ,time,date  -->
+
+        
+        <form class="program-form" id="programForm">
+          <div class="form-group">
+            <label for="programImage">Program Image:</label>
+            <input type="file" id="programImage" name="programImage" accept="image/*" required>
+          </div>
+          <div class="form-group">
+            <label for="programName">Program Name:</label>
+            <input type="text" id="programName" name="programName" required>
+          </div>
+          <div class="form-group">
+            <label for="instituteName">International Institute Name:</label>
+            <input type="text" id="instituteName" name="instituteName" required>
+          </div>
+          <div class="form-group">
+            <label for="countryName">Country Name:</label>
+            <input type="text" id="countryName" name="countryName" required>
+          </div>
+          <div class="form-group">
+            <label for="programTime">Time:</label>
+            <input type="time" id="programTime" name="programTime" required>
+          </div>
+          <div class="form-group">
+            <label for="programDate">Date:</label>
+            <input type="date" id="programDate" name="programDate" required>
+          </div>
+          <button class="cta-button" id="addProgramBtn">Add New Program</button>
+        </form>
+        
+
+
+        
+
+
+
       <div class="programs-list-0">
         <div class="program-item">
           <div class="program-image">
@@ -87,6 +126,8 @@
           </div>
             <div class="program-info">
                 <strong>Summer Exchange Program</strong> - University of XYZ
+                <div class="program-details program-time">Time: 5:00 PM</div>
+                <div class="program-details program-date">Date: 27th January 2025</div>
             </div>
             <div class="program-actions">
                 <button class="edit-btn">Edit</button>
@@ -99,6 +140,8 @@
           </div>
             <div class="program-info">
                 <strong>Global Leadership Workshop</strong> - Multiple Partners
+                <div class="program-details program-time">Time: 5:00 PM</div>
+                <div class="program-details program-date">Date: 27th January 2025</div>
             </div>
             <div class="program-actions">
                 <button class="edit-btn">Edit</button>
@@ -111,6 +154,8 @@
           </div>
             <div class="program-info">
                 <strong>International Research Symposium</strong> - Annual Event
+                <div class="program-details program-time">Time: 5:00 PM</div>
+                <div class="program-details program-date">Date: 27th January 2025</div>
             </div>
             <div class="program-actions">
                 <button class="edit-btn">Edit</button>
@@ -119,75 +164,6 @@
         </div>
     </div>
 
-
-
-      <div class="programs-list ">
-        <div class="program-card animate-on-scroll" id="program-card1">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-
-        <div class="program-card animate-on-scroll" id="program-card2">
-          <div class="program-image">
-            <img src="https://via.placeholder.com/300x200" alt="Program Image">
-          </div>
-          <div class="program-content">
-            <div class="program-name">Amazing Program</div>
-            <div class="program-details program-time">Time: 5:00 PM</div>
-            <div class="program-details program-date">Date: 27th January 2025</div>
-          </div>
-        </div>
-      </div>
     </main>
   </div>
 
