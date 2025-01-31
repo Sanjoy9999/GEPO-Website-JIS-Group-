@@ -43,7 +43,7 @@ class PartnerController
             'institute' => $institute
         ]);
 
-        return Response::success(['message' => 'Partner created successfully'], 201);
+        return Response::success(201, 'Partner created successfully', ['id' => $pdo->lastInsertId()]);
     }
 
     public static function getAllPartners()
