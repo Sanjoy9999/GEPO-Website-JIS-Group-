@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await axios.get("http://localhost:8080/api/users", {
+    const response = await axios.get("/users", {
       withCredentials: true,
     });
 
@@ -28,7 +28,7 @@ async function initAdmin() {
       { tag: "pendingApplications", route: "partner-inquiry" },
     ];
     const requestPromises = fields.map((field) => {
-      return axios.get(`http://localhost:8080/api/${field.route}`, {
+      return axios.get(`/${field.route}`, {
         withCredentials: true,
       });
     });
@@ -43,13 +43,6 @@ async function initAdmin() {
   } catch (error) {
     console.error(error);
   }
-
-  // setTimeout(() => {
-  //   document.getElementById("activePartnerships").textContent = "42";
-  //   document.getElementById("ongoingPrograms").textContent = "15";
-  //   document.getElementById("upcomingEvents").textContent = "8";
-  //   document.getElementById("pendingApplications").textContent = "23";
-  // }, 1000);
 
   // Chart.js implementation
   const ctx = document.getElementById("applicationsChart").getContext("2d");

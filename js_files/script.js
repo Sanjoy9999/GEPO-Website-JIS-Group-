@@ -96,3 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
     navBar.classList.add("close");
   }
 });
+
+if (window.axios) {
+  // Set up the baseURL directly in the axios instance
+  axios.defaults.baseURL = "http://localhost:8080/api";
+  axios.defaults.withCredentials = true;
+}

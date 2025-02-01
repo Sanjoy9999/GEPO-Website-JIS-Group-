@@ -11,15 +11,12 @@ form.addEventListener("submit", async (e) => {
   try {
     form.querySelector("#submitBtn").disabled = true;
     // /contact-application POST
-    const response = await axios.post(
-      "http://localhost:8080/api/contact-application",
-      formData,
-      { withCredentials: true }
-    );
+    const response = await axios.post("/contact-application", formData);
 
     const data = response.data.data;
     console.log(data);
     alert("Your message has been sent successfully!");
+    form.reset();
     form.querySelector("#submitBtn").disabled = false;
   } catch (error) {
     console.error(error);

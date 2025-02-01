@@ -17,11 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/login",
-        { email, password },
-        { withCredentials: true }
-      );
+      const response = await axios.post("/login", { email, password });
 
       const data = response.data.data;
       if (data.role === "admin") {

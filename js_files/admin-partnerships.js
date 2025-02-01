@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await axios.get("http://localhost:8080/api/users", {
-      withCredentials: true,
-    });
+    const response = await axios.get("/users");
 
     const data = response.data.data;
     if (data.role !== "admin") {
@@ -12,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initAdmin();
   } catch (error) {
     console.error("Error fetching data:", error);
-    // location.href = "/html_files/login.html";
+    location.href = "/html_files/login.html";
   }
 });
 
