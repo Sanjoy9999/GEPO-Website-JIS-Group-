@@ -21,7 +21,7 @@ class PartnerInquiryController
         }
 
         $pdo = Database::connect();
-        $stmt = $pdo->prepare("INSERT INTO partner_inquiry (personName, email, institute, partnershipType, message) VALUES (:personName, :email, :institute, :partnershipType, :message)");
+        $stmt = $pdo->prepare("INSERT INTO partner_inquires (personName, email, institute, partnershipType, message) VALUES (:personName, :email, :institute, :partnershipType, :message)");
         $stmt->execute([
             ":personName" => $personName,
             ":email" => $email,
@@ -36,7 +36,7 @@ class PartnerInquiryController
     public static function getAllInquiries()
     {
         $pdo = Database::connect();
-        $stmt = $pdo->prepare("SELECT * FROM partner_inquiry");
+        $stmt = $pdo->prepare("SELECT * FROM partner_inquires");
         $stmt->execute();
         $inquiries = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return Response::success(200, "Inquiries fetched successfully", $inquiries);
@@ -46,7 +46,7 @@ class PartnerInquiryController
     {
         $id = $params['id'];
         $pdo = Database::connect();
-        $stmt = $pdo->prepare("DELETE FROM partner_inquiry WHERE id = :id");
+        $stmt = $pdo->prepare("DELETE FROM partner_inquires WHERE id = :id");
         $stmt->execute([
             ":id" => $id
         ]);

@@ -70,9 +70,6 @@ class Router
         // Combine POST and FILES data
         $data = array_merge($postData, $fileData) ?? [];
 
-        // Log incoming data for debugging
-        error_log("Incoming data: " . print_r($data, true));
-
         // Check if the route exists for the given method and path
         if (isset($this->routes[$method][$path])) {
             $route = $this->routes[$method][$path];
@@ -87,6 +84,9 @@ class Router
                     return;
                 }
             }
+
+            // Log incoming data for debugging
+            error_log("Incoming data: " . print_r($data, true));
 
             // Call the controller callback
             echo call_user_func($route['callback'], $queryParams, $data);

@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="../css_files/admin-styles.css" />
     <link rel="stylesheet" href="../css_files/admin-partnerships.css" />
     <link rel="shortcut icon" href="../assets/images/favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4bd740a6dc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <header>
@@ -89,15 +93,19 @@
       <main class="admin-content">
         <div class="admin-header">
           <h1>Partnerships Management</h1>
-   
         </div>
-       <!-- Make a form where you can add a new partnership 
+        <!-- Make a form where you can add a new partnership 
         admin can add a new partnership by filling out the form 
         In this form admin can upload image international institute name country name type of partnership -->
         <form id="addPartnershipForm" class="admin-form">
           <div class="form-group">
             <label for="instituteName">International Institute Name</label>
-            <input type="text" id="instituteName" name="instituteName" required />
+            <input
+              type="text"
+              id="instituteName"
+              name="instituteName"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="countryName">Country Name</label>
@@ -105,16 +113,27 @@
           </div>
           <div class="form-group">
             <label for="partnershipType">Type of Partnership</label>
-            <input type="text" id="partnershipType" name="partnershipType" required />
+            <input
+              type="text"
+              id="partnershipType"
+              name="partnershipType"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="partnershipImage">Upload Image</label>
-            <input type="file" id="partnershipImage" name="partnershipImage" accept="image/*" required />
+            <input
+              type="file"
+              id="partnershipImage"
+              name="partnershipImage"
+              accept="image/*"
+              required
+            />
           </div>
         </form>
-          <button type="submit"  class="cta-button" id="addPartnershipBtn">
-            Add New Partnership
-          </button>
+        <button type="submit" class="cta-button" id="addPartnershipBtn">
+          Add New Partnership
+        </button>
 
         <div class="partnerships-list">
           <!-- List of partnerships will be dynamically added here -->

@@ -11,34 +11,42 @@ class VerifyUser
 {
     public static function handle($data)
     {
-        if (isset($_COOKIE['accessToken'])) {
-            $accessToken = filter_var($_COOKIE['accessToken'], FILTER_UNSAFE_RAW);
-            $decodedToken = Jwt::verifyToken($accessToken);
+        $accessToken = null;
 
-            if (!$decodedToken) {
-                return Response::error(401, 'Unauthorized', ['access token expire', 'You are not logged in', 'Unauthorize access', 'please login']);
+        if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+            $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
+            if (strpos($authHeader, 'Bearer ') === 0) {
+                $accessToken = substr($authHeader, 7); // Remove "Bearer " prefix
             }
-
-            $userId = $decodedToken['id'];
-            error_log("userId: " . print_r($userId, true));
-            $pdo = Database::connect();
-            $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
-            $stmt->execute([':id' => $userId]);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-            if ($user) {
-                unset($user['password']);
-                $data['user'] = $user;
-            } else {
-                return Response::error(401, 'Unauthorized', ['You are not logged in', 'Unauthorize access', 'please login']);
-            }
-
-            return $data;
-        } else {
-            return Response::error(401, 'Unauthorized', ['You are not logged in', 'Unauthorize access', 'please login']);
         }
 
-        exit;
+        if (!$accessToken && isset($_COOKIE['accessToken'])) {
+            $accessToken = $_COOKIE['accessToken'];
+        }
+
+        if (!$accessToken) {
+            return Response::error(401, 'Unauthorized', ['Token missing', 'Please log in']);
+        }
+
+        $decodedToken = Jwt::verifyToken($accessToken);
+        if (!$decodedToken) {
+            return Response::error(401, 'Unauthorized', ['Invalid or expired token', 'Please log in']);
+        }
+
+        $userId = $decodedToken['id'];
+        $pdo = Database::connect();
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt->execute([':id' => $userId]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            unset($user['password']); // Remove sensitive data
+            $data['user'] = $user;
+            return $data;
+        } else {
+            header("Content-Type: application/json");
+            http_response_code(401);
+            echo Response::error(401, 'Unauthorized', ['User not found', 'Please log in']);
+        }
     }
 }

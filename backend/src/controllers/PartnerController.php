@@ -49,9 +49,9 @@ class PartnerController
     public static function getAllPartners()
     {
         // if user is logged in and role is admin then get partners
-        if (!isset($data['user']) || $data['user']['role'] !== 'admin') {
-            return Response::error(401, "Unauthorized", ['You are not authorized to create a partner']);
-        }
+        // if (!isset($data['user']) || $data['user']['role'] !== 'admin') {
+        //     return Response::error(401, "Unauthorized", ['You are not authorized to create a partner']);
+        // }
 
         $pdo = Database::connect();
         $stmt = $pdo->prepare("SELECT partners.*, users.email, users.name FROM partners INNER JOIN users ON partners.user = users.id");
