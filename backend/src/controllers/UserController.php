@@ -12,9 +12,9 @@ class UserController
     // get user Data
     public static function getUser($_, $data)
     {
-        // if (!isset($data['user'])) {
-        //     return Response::error(401, 'Unauthorized', ['You are not logged in', 'Unauthorize access', 'please login']);
-        // }
+        if (!isset($data['user'])) {
+            return Response::error(401, 'Unauthorized', ['You are not logged in', 'Unauthorize access', 'please login']);
+        }
 
         $user = $data['user'];
         return Response::success(200, "User Data Fetched", $user);
@@ -80,8 +80,16 @@ class UserController
                 $token = Jwt::generateToken(['id' => $user['id']]);
 
                 // Store the JWT in a cookie
-                setcookie('accessToken', $token, time() + 3600, '/', '', false, true);
+                setcookie('accessToken', $token, [
+                    'expires' => time() + 3600, // 1 hour
+                    'path' => '/', // Available to all paths on the domain
+                    'domain' => '', // Leave empty for localhost
+                    'secure' => false, // Should be true in production (HTTPS)
+                    'httponly' => true, // JavaScript cannot access
+                    'samesite' => 'Strict' // Lax or None (None requires Secure flag)
+                ]);
 
+                error_log("Cookie Set: " . $token);  // Check if cookie is set
 
                 // Return the JWT in the header
                 header('Authorization: Bearer ' . $token);
