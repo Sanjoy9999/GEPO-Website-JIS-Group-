@@ -1,13 +1,55 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await axios.get("http://localhost:8080/api/users", {
+      withCredentials: true,
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
+    const data = response.data.data;
+    if (data.role !== "admin") {
+      throw new Error("must be an admin");
+    }
+
+    initAdmin();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    location.href = "/html_files/login.html";
+  }
+});
+
+async function initAdmin() {
   // Simulating data loading
   // fetch Data from database
-  setTimeout(() => {
-    document.getElementById("activePartnerships").textContent = "42";
-    document.getElementById("ongoingPrograms").textContent = "15";
-    document.getElementById("upcomingEvents").textContent = "8";
-    document.getElementById("pendingApplications").textContent = "23";
-  }, 1000);
+
+  try {
+    const fields = [
+      { tag: "activePartnerships", route: "partners" },
+      { tag: "ongoingPrograms", route: "study-abroad-programs" },
+      { tag: "upcomingEvents", route: "upcoming-events" },
+      { tag: "pendingApplications", route: "partner-inquiry" },
+    ];
+    const requestPromises = fields.map((field) => {
+      return axios.get(`http://localhost:8080/api/${field.route}`, {
+        withCredentials: true,
+      });
+    });
+
+    const responses = await Promise.all(requestPromises);
+
+    responses.forEach((response, index) => {
+      const data = response.data.data;
+      console.log(data.length);
+      document.getElementById(fields[index].tag).textContent = data.length;
+    });
+  } catch (error) {
+    console.error(error);
+  }
+
+  // setTimeout(() => {
+  //   document.getElementById("activePartnerships").textContent = "42";
+  //   document.getElementById("ongoingPrograms").textContent = "15";
+  //   document.getElementById("upcomingEvents").textContent = "8";
+  //   document.getElementById("pendingApplications").textContent = "23";
+  // }, 1000);
 
   // Chart.js implementation
   const ctx = document.getElementById("applicationsChart").getContext("2d");
@@ -50,12 +92,4 @@ document.addEventListener("DOMContentLoaded", () => {
     li.textContent = activity;
     recentActivitiesList.appendChild(li);
   });
-
-  // Generate Report button functionality
-  document.getElementById("generateReportBtn").addEventListener("click", () => {
-    alert(
-      "Generating comprehensive report... This feature would typically create a detailed PDF or Excel report of all activities, partnerships, and program statistics."
-    );
-  });
-
-});
+}
