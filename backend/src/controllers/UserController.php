@@ -110,7 +110,14 @@ class UserController
         if (!isset($data['user'])) {
             return Response::error(401, 'Unauthorized', ['You are not logged in', 'Unauthorize access', 'please login']);
         }
-        setcookie('accessToken', '', time() - 3600, '', '', true, true);
+        setcookie('accessToken', "", [
+            'expires' => time() - 3600,
+            'path' => '/',
+            'domain' => '',
+            'secure' => false,
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
         return Response::success(200, 'Logged out successfully');
     }
 

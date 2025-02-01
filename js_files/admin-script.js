@@ -86,3 +86,16 @@ async function initAdmin() {
     recentActivitiesList.appendChild(li);
   });
 }
+
+const logoutBtn = document.getElementById("logoutBtn");
+logoutBtn.addEventListener("click", () => {
+  axios
+    .post("/logout")
+    .then(() => {
+      console.log("Logout successful");
+      location.href = "/index.html";
+    })
+    .catch((error) => {
+      console.error("Error logging out:", error);
+    });
+});
