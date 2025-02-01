@@ -65,7 +65,7 @@ class PartnerController
         $pdo = Database::connect();
         $stmt = $pdo->prepare("SELECT DISTINCT country FROM partners");
         $stmt->execute();
-        $countries = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        $countries = array_unique($stmt->fetchAll(PDO::FETCH_COLUMN));
         return Response::success(200, "Countries fetched successfully", $countries);
     }
 

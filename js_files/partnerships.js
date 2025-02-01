@@ -294,8 +294,11 @@ const details = [
 initializeDetails(details);
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // All render Data
-const countries = ["USA", "India", "Germany", "France", "Canada"];
-initMapMarker();
+let countries = [];
+axios.get("/partners/countries").then((response) => {
+  countries = response.data.data;
+  initMapMarker();
+});
 const stories = [
   {
     name: "Naveenkumar",
