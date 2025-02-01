@@ -120,13 +120,7 @@ function renderStory(story) {
               </div>
               <p class="story">${story.story}</p>
               <div class="educationDetails">
-                <div class="stream">${story.stream}</div>
-                <div class="universityImage">
-                <img
-                  src="${story.universityImage}"
-                  alt="${story.university}"
-                />
-                </div>
+                <div class="stream">${story.course}</div>
               </div>
             </div>
             </div>
@@ -305,7 +299,7 @@ const stories = [
     image: "https://publicassets.leverageedu.com/stories/naveen.webp",
     story:
       "I applied to 4 universities and I got offers from 2 universities. GEPO helped me through entire process to pursue masters. They have separate teams to handle all this.",
-    stream: "Data Science",
+    course: "Data Science",
     university: "Central Michigan University",
     universityImage:
       "https://lepublicassets.leverageedu.com/testimonials/universities/2260.png",
@@ -315,7 +309,7 @@ const stories = [
     image: "https://publicassets.leverageedu.com/stories/shreya.webp",
     story:
       "GEPO is proactive, detail-oriented, and trustworthy. They made my study abroad dream a breeze. Shoutout to the team for showcasing their excellence!",
-    stream: "Management",
+    course: "Management",
     university: "Berlin School of Business and Innovation",
     universityImage:
       "https://publicassets.leverageedu.com/testimonials/universities/1032.png",
@@ -325,7 +319,7 @@ const stories = [
     image: "https://publicassets.leverageedu.com/stories/hanna.webp",
     story:
       "GEPO made it incredibly convenient. Deepa, the consultant, provided excellent guidance. I'm thrilled with the all-in-one support for loans, forex, and accommodation.",
-    stream: "Data Science",
+    course: "Data Science",
     university: "Humber University",
     universityImage:
       "https://lepublicassets.leverageedu.com/testimonials/universities/2092.png",
@@ -335,7 +329,7 @@ const stories = [
     image: "https://publicassets.leverageedu.com/stories/kshitij.webp",
     story:
       "My GEPO coach made studying abroad a breeze. From university shortlisting to visa application, they guided me every step of the way.",
-    stream: "Data Science",
+    course: "Data Science",
     university: "University of Birmingham",
     universityImage:
       "https://lepublicassets.leverageedu.com/testimonials/universities/109.png",
@@ -345,7 +339,7 @@ const stories = [
     image: "https://publicassets.leverageedu.com/stories/samad.webp",
     story:
       "Extremely satisfied with GEPO for my college application process. Deserves a perfect 5/5 rating!",
-    stream: "Data Science",
+    course: "Data Science",
     university: "Queen Mary University of London",
     universityImage:
       "https://lepublicassets.leverageedu.com/testimonials/universities/128.png",
@@ -360,4 +354,8 @@ const stories = [
       "https://lepublicassets.leverageedu.com/testimonials/universities/26.png",
   },
 ];
-initStories();
+
+axios.get("/success-stories").then((response) => {
+  stories.push(...response.data.data);
+  initStories();
+});

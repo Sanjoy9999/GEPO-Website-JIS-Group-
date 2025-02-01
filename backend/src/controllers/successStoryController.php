@@ -51,12 +51,13 @@ class SuccessStoryController
         $imageId = $pdo->lastInsertId();
 
         // create success story entry
-        $stmt = $pdo->prepare("INSERT INTO success_stories (image, name, institute, course) VALUES (:image, :name, :institute, :course)");
+        $stmt = $pdo->prepare("INSERT INTO success_stories (image, name, institute, course, story) VALUES (:image, :name, :institute, :course, :story)");
         $stmt->execute([
             ':image' => $imageId,
             ':name' => $data['name'],
             ':institute' => $data['institute'],
-            ':course' => $data['course']
+            ':course' => $data['course'],
+            ':story' => $data['story']
         ]);
         return Response::success(200, "success story entry created successfully", ['id' => $pdo->lastInsertId()]);
     }
