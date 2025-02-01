@@ -213,7 +213,7 @@ inputField.forEach((field) => {
 });
 
 // form submit to backend
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const successFields = document.querySelectorAll(".success");
@@ -227,8 +227,24 @@ form.addEventListener("submit", (e) => {
 
   formError.style.display = "none";
   const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-  console.log(data);
+
+  // make api request
+  const submitBtn = form.querySelector("button[type='submit']");
+  try {
+    submitBtn.disabled = true;
+    const response = await axios.post("/partner-inquiry", formData);
+
+    const data = response.data.data;
+    console.log(data);
+    alert("Your message has been sent successfully!");
+    submitBtn.disabled = false;
+  } catch (error) {
+    formError.style.display = "block";
+    formError.textContent = error.response.data.message;
+    submitBtn.disabled = false;
+    return;
+  }
+
   form.reset();
 });
 

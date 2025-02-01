@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/4bd740a6dc.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/maplibre-gl@2.4.0/dist/maplibre-gl.css"
       rel="stylesheet"
@@ -85,7 +86,7 @@
                   type="text"
                   class="input-field"
                   id="institution"
-                  name="institution"
+                  name="institute"
                   required
                 />
                 <span class="error-message"></span>
@@ -96,7 +97,7 @@
                   type="text"
                   class="input-field"
                   id="contact-name"
-                  name="contact-name"
+                  name="personName"
                   required
                 />
                 <span class="error-message"></span>
@@ -119,7 +120,7 @@
                 <select
                   class="input-field"
                   id="partnership-type"
-                  name="partnership-type"
+                  name="partnershipType"
                   required
                 >
                   <option value="" hidden>Select an option</option>

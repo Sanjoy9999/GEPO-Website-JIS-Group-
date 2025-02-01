@@ -232,6 +232,11 @@ form button:hover {
   background-color: var(--primary-color);
 }
 
+form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .form-field.error input:focus,
 .form-field.error select:focus,
 .form-field.error textarea:focus {
