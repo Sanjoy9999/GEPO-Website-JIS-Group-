@@ -121,6 +121,11 @@
   background-color: var(--secondary-color);
 }
 
+#form-container form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 #contact-container .separate-line {
   width: 1px;
   height: calc(100% - 50px);

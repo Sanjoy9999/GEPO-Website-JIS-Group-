@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/4bd740a6dc.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../css_files/styles.css" />
     <link rel="stylesheet" href="../css_files/contact.css" />
   </head>
@@ -74,7 +75,7 @@
               </div>
               <div class="form-field">
                 <label for="inquiry-type">Inquiry Type</label>
-                <select id="inquiry-type" name="inquiry-type" required>
+                <select id="inquiry-type" name="inquiryType" required>
                   <option value="" hidden>Select an option</option>
                   <option value="student">Student Inquiry</option>
                   <option value="faculty">Faculty Inquiry</option>
@@ -86,7 +87,7 @@
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" required></textarea>
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit" id="submitBtn">Submit</button>
             </form>
           </div>
           <div class="separate-line"></div>
