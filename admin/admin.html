@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEPO - Admin Portal</title>
+    <link rel="stylesheet" href="../css_files/styles.css" />
+    <link rel="stylesheet" href="../css_files/admin-styles.css" />
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../index.html"
+            ><img src="../assets/images/logo.png" alt="JIS Logo"
+          /></a>
+        </div>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li>
+            <a href="../html_files/about.html">About Us</a>
+          </li>
+          <li>
+            <a href="../html_files/partnerships.html">Global Partnerships</a>
+          </li>
+          <li>
+            <a href="../html_files/programs.html">Programs & Initiatives</a>
+          </li>
+          <li>
+            <a href="../html_files/resources.html">Resources & Support</a>
+          </li>
+          <li><a href="../html_files/events.html">Events & News</a></li>
+          <li><a href="../html_files/contact.html">Contact Us</a></li>
+          <li><a href="../html_files/login.html">Login</a></li>
+          <li><a href="#" class="active">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="admin-container">
+      <aside class="admin-sidebar">
+        <h2>Admin Portal</h2>
+        <ul>
+          <li>
+            <a href="#" class="active"
+              ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="./admin-partnerships.html"
+              ><i class="fas fa-handshake"></i> Partnerships</a
+            >
+          </li>
+          <li>
+            <a href="./admin-programs.html"
+              ><i class="fas fa-graduation-cap"></i> Programs</a
+            >
+          </li>
+          <li>
+            <a href="./admin-events.html"
+              ><i class="fas fa-calendar-alt"></i> Events</a
+            >
+          </li>
+          <li>
+            <a href="./admin-applications.html"
+              ><i class="fas fa-file-alt"></i> Applications</a
+            >
+          </li>
+          <li>
+            <a href="./admin-reports.html"
+              ><i class="fas fa-chart-bar"></i> Reports</a
+            >
+          </li>
+          <li>
+            <a href="./admin-settings.html"
+              ><i class="fas fa-cog"></i> Settings</a
+            >
+          </li>
+        </ul>
+      </aside>
+      <main class="admin-content">
+        <div class="admin-header">
+          <h1>Admin Dashboard</h1>
+          <button class="cta-button" id="generateReportBtn">
+            Generate Report
+          </button>
+        </div>
+        <div class="admin-stats">
+          <div class="stat-card">
+            <h3>Active Partnerships</h3>
+            <p id="activePartnerships">--</p>
+          </div>
+          <div class="stat-card">
+            <h3>Ongoing Programs</h3>
+            <p id="ongoingPrograms">--</p>
+          </div>
+          <div class="stat-card">
+            <h3>Upcoming Events</h3>
+            <p id="upcomingEvents">--</p>
+          </div>
+          <div class="stat-card">
+            <h3>Pending Applications</h3>
+            <p id="pendingApplications">--</p>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="applicationsChart"></canvas>
+        </div>
+        <div class="recent-activities">
+          <h2>Recent Activities</h2>
+          <ul id="recentActivitiesList">
+            Recent activities will be dynamically added here
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <!-- Footer content -->
+    </footer>
+
+    <script src="../js_files/admin-script.js"></script>
+  </body>
+</html>
