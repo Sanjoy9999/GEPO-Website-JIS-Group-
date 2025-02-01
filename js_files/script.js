@@ -102,3 +102,21 @@ if (window.axios) {
   axios.defaults.baseURL = "http://localhost:8080/api";
   axios.defaults.withCredentials = true;
 }
+
+(async () => {
+  if (location.pathname.includes("admin")) {
+    try {
+      const response = await axios.get("/users", {
+        withCredentials: true,
+      });
+
+      const data = response.data.data;
+      if (data.role !== "admin") {
+        throw new Error("must be an admin");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      location.href = "/html_files/login.html";
+    }
+  }
+})();
