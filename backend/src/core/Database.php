@@ -24,7 +24,9 @@ class Database
                     \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC  // Fetch as associative array
                 ]);
             } catch (\PDOException $e) {
-                die("Database connection failed: " . $e->getMessage());
+                http_response_code(500);
+                header("Content-Type: application/json");
+                echo Response::error(500, "Database connection failed: " . $e->getMessage());
             }
         }
         return self::$pdo;
