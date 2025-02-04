@@ -8,7 +8,7 @@ class Jwt
 
     public static function init()
     {
-        self::$secret_key = getenv('JWT_SECRET_KEY'); // Change this to a secure key
+        self::$secret_key = $_ENV['JWT_SECRET_KEY'] ?? getenv('JWT_SECRET_KEY');
     }
 
     public static function generateToken($payload, $expiry = 3600)

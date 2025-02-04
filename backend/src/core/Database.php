@@ -12,10 +12,10 @@ class Database
 
     public static function connect()
     {
-        self::$host = getenv('DB_HOST');
-        self::$dbname = getenv('DB_NAME');
-        self::$username = getenv('DB_USERNAME');
-        self::$password = getenv('DB_PASSWORD');
+        self::$host = $_ENV['DB_HOST'] ?? getenv('DB_HOST') ?? '127.0.0.1';
+        self::$dbname = $_ENV['DB_NAME'] ?? getenv('DB_NAME') ?? 'GEPO';
+        self::$username = $_ENV['DB_USERNAME'] ?? getenv('DB_USERNAME') ?? 'root';
+        self::$password = $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD') ?? '';
 
         if (self::$pdo === null) {
             try {
