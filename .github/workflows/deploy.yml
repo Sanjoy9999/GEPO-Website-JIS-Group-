@@ -24,8 +24,5 @@ jobs:
             backend/
             database/
             README.md
-            .gitignore
-            .git/
-            .github/
             
             
