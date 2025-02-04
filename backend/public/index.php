@@ -30,36 +30,6 @@ require_once "../src/core/Database.php";
 require_once "../src/middleware/FileUpload.php";
 require_once "../src/middleware/VerifyUser.php";
 
-// Set error reporting to E_ALL to catch all types of errors
-// error_reporting(E_ALL);
-
-
-// use Core\Response;
-// // Set a custom error handler function
-// function errorHandler($errno, $errstr, $errfile, $errline)
-// {
-//     // Handle the error here
-//     Response::error(500, 'Internal Server Error', ['error' => $errstr, 'file' => $errfile, 'line' => $errline]);
-//     exit;
-// }
-
-// // Set the custom error handler function
-// set_error_handler('errorHandler');
-
-// // Set a shutdown function to catch any fatal errors
-// function shutdownFunction()
-// {
-//     $error = error_get_last();
-//     if ($error['type'] === E_ERROR) {
-//         // Handle the fatal error here
-//         Response::error(500, 'Internal Server Error', ['error' => $error['message'], 'file' => $error['file'], 'line' => $error['line']]);
-//         exit;
-//     }
-// }
-
-// Set the shutdown function
-// register_shutdown_function('shutdownFunction');
-
 use Core\Router;
 
 $router = new Router();
