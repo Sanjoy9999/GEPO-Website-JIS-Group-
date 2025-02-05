@@ -50,6 +50,21 @@ class UserController
         $encryptedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
 
         $pdo = Database::connect();
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username OR email = :email");
+        $stmt->execute([':username' => $data['username'], ':email' => $data['email']]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            if ($user['username'] === $data['username']) {
+                return Response::error(400, 'Username already exists', ['Username already exists']);
+            }
+            if ($user['email'] === $data['email']) {
+                return Response::error(400, 'Email already exists', ['Email already exists']);
+            }
+        }
+
+        $encryptedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
+
         $stmt = $pdo->prepare("INSERT INTO users (name, email, username, password, role, institute) VALUES (:name, :email, :username, :password, :role, :institute)");
         $stmt->execute([
             ':name' => $data['name'],
