@@ -32,8 +32,9 @@ form.addEventListener("submit", async (e) => {
     console.log(data);
     alert("User signup successfully.");
   } catch (error) {
-    console.error(error);
-    alert(error.response.data.message);
+    error?.response?.data?.message || "Something went wrong";
+    console.error(errorMessage);
+    alert(errorMessage);
     return;
   }
 

@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href = "/index.html";
       }
     } catch (error) {
-      console.error("Error:", error.message);
+      const errorMessage =
+        error?.response?.data?.message || "Something went wrong";
+      console.error(error);
+      alert(errorMessage);
     }
   });
 });
