@@ -44,7 +44,7 @@ class Router
     public function resolve()
     {
         $method = $_SERVER['REQUEST_METHOD'];
-        $path = $_SERVER['REQUEST_URI'];
+        $path = str_replace('/backend', '', $_SERVER['REQUEST_URI']);
 
         // Parse query string (e.g., ?id=1)
         $queryParams = [];
@@ -69,8 +69,7 @@ class Router
 
         // Combine POST and FILES data
         $data = array_merge($postData, $fileData) ?? [];
-
-        // Check if the route exists for the given method and path
+        error_log("Working Here " . print_r($path, true));
         if (isset($this->routes[$method][$path])) {
             $route = $this->routes[$method][$path];
 

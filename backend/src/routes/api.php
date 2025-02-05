@@ -14,3 +14,4 @@ require_once __DIR__ . '/upcomingEventRoutes.php';
 require_once __DIR__ . '/vacancyRoutes.php';
 require_once __DIR__ . '/facultyResearchExchangeRoutes.php';
 require_once __DIR__ . '/studyTourRoutes.php';
+require_once __DIR__ . '/healthCheckRoutes.php';

@@ -1,6 +1,6 @@
 <?php
 // Load environment variables
-require_once __DIR__ . "/../src/core/LoadEnv.php";
+require_once __DIR__ . "/./src/core/LoadEnv.php";
 (new \Core\LoadEnv())->load();
 
 // CORS Headers
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 // Load JWT Handler
-require_once __DIR__ . "/../src/core/JwtHandler.php";
+require_once __DIR__ . "/./src/core/JwtHandler.php";
 
 use Core\Jwt;
 
@@ -25,16 +25,16 @@ Jwt::init();
 
 
 // Load dependencies
-require_once "../src/core/Router.php";
-require_once "../src/core/Response.php";
-require_once "../src/core/Database.php";
-require_once "../src/middleware/FileUpload.php";
-require_once "../src/middleware/VerifyUser.php";
+require_once "./src/core/Router.php";
+require_once "./src/core/Response.php";
+require_once "./src/core/Database.php";
+require_once "./src/middleware/FileUpload.php";
+require_once "./src/middleware/VerifyUser.php";
 
 use Core\Router;
 
 $router = new Router();
-
-require_once "../src/routes/api.php"; // Load routes
+error_log("Make the request to index.php");
+require_once "./src/routes/api.php"; // Load routes
 
 $router->resolve();
