@@ -37,3 +37,19 @@ Event Registration & Notifications
 For any queries, reach out to:
 📧 Email: gepo@jis.edu
 🌐 Website: GEPO Official Site
+
+
+# GEPO-Website-JIS-Group
+
+## Users
+
+| Role                 | Email                  | Password        |
+|----------------------|------------------------|-----------------|
+| `admin`              | admin@admin.com        | adminpass       |
+| `student`            | student@student.com    | studentpass     |
+| `faculty`            | faculty@test.com       | facultypass     |
+| `international_partner` | partner@one.com     | partnerpass     |
+
+
+
+
